@@ -1,0 +1,432 @@
+/* Grundstil */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  color: #fff;
+  background-color: #000;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+.section p {
+  margin-bottom: 20px; /* Erhöht den Abstand zwischen Text und Button */
+}
+
+h2 {
+  color: #9b59b6;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  position: relative;
+  height: 30px; /* Logo-Höhe anpassen */
+  width: auto; /* Proportionen beibehalten */
+  display: block;
+  z-index: 50;
+}
+
+.logotext img {
+  height: 300px;
+  width: auto;
+  position: relative;
+  display: block;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 20;
+  transition: transform 0.6s ease;
+}
+/* Klasse für das Verstecken der Navbar */
+.navbar.hidden {
+  transform: translateY(-100%); /* Schiebt die Navbar aus dem sichtbaren Bereich */
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+.nav-links li a {
+  background: #b381ff;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-left: 20px;
+  text-decoration: none;
+}
+.nav-links li a:hover {
+  color: #fff; /* Optional: Wechselt die Farbe bei Hover zu Weiß */
+}
+
+/* Hero Section mit Parallax-Effekt */
+.hero-section {
+  background-image: url('dein-bild.png'); /* Ersetze 'dein-bild.jpg' mit deinem Bild */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-text {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-text h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+.cta-button {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #9e56ff, #e32eff); /* Farbverlauf für den Button */
+  border: none;
+  color: #fff;
+  border-radius: 8px; /* Abgerundete Ecken */
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease; /* Übergangseffekt für Hover */
+}
+
+
+.cta-button:hover {
+  filter: brightness(1.1); /* Leichter Helligkeitsanstieg beim Hover */
+}
+
+/* Grid für die Produktkarten */
+.product-grid {
+  display: flex;
+  justify-content: center; /* Zentriert die Karten horizontal */
+  gap: 20px; /* Abstand zwischen den Karten */
+  padding: 20px;
+  flex-wrap: wrap; /* Ermöglicht Umbrechen bei kleineren Bildschirmen */
+}
+
+/* Produktkarten-Styling */
+.product-card {
+  background: linear-gradient(45deg, #9e56ff, #e32eff); /* Farbverlauf für die Karte */
+  border-radius: 15px; /* Abgerundete Ecken */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Weißer Schatten rund um die Karte */
+  padding: 20px;
+  width: 400px; /* Feste Breite der Karte */
+  height: 500px; /* Feste Höhe der Karte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition für Hover */
+  color: #fff; /* Textfarbe, damit der Text auf dem Farbverlauf sichtbar ist */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text-Styling für die Karte */
+.product-card h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.product-card p {
+  font-size: 1em;
+  color: #e0e0e0;
+}
+
+/* Hover-Effekt */
+.product-card:hover {
+  transform: translateY(-5px); /* Leichtes Anheben */
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); /* Größerer weißer Schatten bei Hover */
+}
+
+
+/* Kontaktformular */
+.contact-section form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #9b59b6;
+  background-color: #000;
+  color: #fff;
+}
+.contact-section button {
+  width: 100%;
+}
+
+.scroll-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px; /* Höhe der Linie */
+  width: 0; /* Startet bei null und wird beim Scrollen erweitert */
+  background: linear-gradient(90deg, #9e56ff, #e32eff); /* Farbverlauf von links nach rechts */
+  transition: width 0.3s ease; /* Sanfter Übergang */
+  z-index: 1000;
+}
+/* Animierte Linie */
+/* Animierte Linie */
+.hero-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0; /* Startet bei 0 und wird beim Scrollen bis 100% animiert */
+  background: linear-gradient(90deg, #9e56ff, #e32eff);
+  box-shadow: 0 0 10px rgba(227, 46, 255, 0.6), 0 0 20px rgba(227, 46, 255, 0.4);
+  animation: slideAndFade 3s ease forwards;
+  z-index: 20;
+}
+
+/* Animation */
+@keyframes slideAndFade {
+  0% {
+    width: 0; /* Startpunkt */
+    opacity: 1;
+  }
+  80% {
+    width: 100%; /* Die Linie breitet sich vollständig über den Bildschirm aus */
+    opacity: 1;
+  }
+  100% {
+    width: 100%; /* Linie bleibt in der Breite, aber verschwindet */
+    opacity: 1;
+  }
+}
+.cta-text {
+  display: inline-block; /* Damit der Text wie ein Button aussieht */
+  padding: 10px 20px; /* Abstände beibehalten */
+  background: linear-gradient(45deg, #9e56ff, #e32eff); /* Gleicher Farbverlauf */
+  color: #fff;
+  border-radius: 8px; /* Abgerundete Ecken beibehalten */
+  font-weight: bold;
+  cursor: default;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+/* Container für die Scroll-Pfeile */
+.scroll-arrows {
+  margin-top: 20px; /* Abstand zum Text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Grundform und Position des Pfeils */
+.arrow {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  animation: arrowAnimation 1.2s infinite;
+}
+
+/* Der eigentliche Pfeil mit Farbverlauf */
+.arrow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #9e56ff, #e32eff);
+ clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+}
+
+/* Animation für die Pfeile */
+@keyframes arrowAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Verzögerung für die Pfeile, damit sie nacheinander erscheinen */
+.scroll-arrows .arrow:nth-child(1) {
+  animation-delay: 0s;
+}
+.scroll-arrows .arrow:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.scroll-arrows .arrow:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.about-text {
+  text-align: left; /* Links ausgerichteter Text */
+  max-width: 600px; /* Optionale maximale Breite für bessere Lesbarkeit */
+  margin: 0 auto; /* Zentriert die gesamte Sektion */
+  padding: 20px;
+}
+
+.about-text h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+/* Styling für den unterstrichenen Link */
+.product-link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: underline;
+  color: whitesmoke; /* Farbe des Links anpassen, z.B. an den Farbverlauf */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.product-card {
+  background: linear-gradient(45deg, #9e56ff, #e32eff); /* Farbverlauf für den gesamten Kartenrahmen */
+  border-radius: 15px;
+  padding: 10px; /* Abstand für den Rahmen */
+  box-sizing: border-box;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Für abgerundete Ecken innerhalb des Rahmens */
+}
+
+h2 {
+  color: #b381ff; /* Neues Violett für die Überschriften */
+  margin-bottom: 20px;
+}
+
+/* Styling für das Dropdown-Menü */
+.nav-links li {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: fixed;
+  background: linear-gradient(90deg, #9e56ff, #e32eff);
+  padding: 20px;
+  top: 30px;
+  left: 0;
+  width: 100vw;
+  list-style: none;
+  text-align: left;
+  min-height: 200px;
+  opacity: 0;
+  transform: translateY(0); /* Startet leicht nach oben verschoben */
+  transform-origin: top;
+  animation: dropdownSlideIn 0.5s ease forwards;
+  z-index: 10; /* Über dem Overlay */
+}
+
+.nav-links li:hover .dropdown {
+  display: block;
+  transform: scaleY(1); /* Entfaltet sich nach unten */
+  opacity: 1;
+}
+
+.nav-links:hover ~ .blur-overlay {
+  opacity: 1;
+  pointer-events: auto; /* Ermöglicht Interaktion mit Overlay */
+}
+
+/* Animation für das Dropdown-Menü */
+@keyframes dropdownSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Links im Dropdown-Menü */
+.dropdown li {
+  margin: 5px 0;
+}
+
+.dropdown li a {
+  color: whitesmoke;
+  padding: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: linkSlideIn 0.5s ease forwards;
+}
+
+.dropdown li:nth-child(1) a { animation-delay: 0.3s; }
+.dropdown li:nth-child(2) a { animation-delay: 0.4s; }
+.dropdown li:nth-child(3) a { animation-delay: 0.5s; }
+
+/* Hover-Effekt für die Links */
+.dropdown li a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes linkSlideIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #111;
+  color: #777;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SamTech Systems</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+<div class="blur-overlay"></div>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+           <div class="hero-line"></div> <!-- Die animierte Linie -->
+      <div class="logo">
+      <img src="logo.png" alt="SamTech Systems Logo" href="index.html">
+    </div>
+      <ul class="nav-links">
+  <li>
+    <a href="#products">Produkte</a>
+    <ul class="dropdown">
+      <li><a href="#gaming-pcs">Gaming PCs</a></li>
+      <li><a href="#business-pcs">Business PCs</a></li>
+      <li><a href="#accessories">Zubehör</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#services">Service</a>
+    <ul class="dropdown">
+      <li><a href="#pc-repair">PC Reparatur</a></li>
+      <li><a href="#phone-repair">Handy Reparatur</a></li>
+      <li><a href="#consulting">Beratung</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#about">Über uns</a>
+    <ul class="dropdown">
+      <li><a href="#our-story">Unsere Geschichte</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#values">Werte</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#contact">Kontakt</a>
+    <ul class="dropdown">
+      <li><a href="#location">Standort</a></li>
+      <li><a href="#contact-form">Kontaktformular</a></li>
+      <li><a href="#support">Support</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </nav>
+  </header>
+
+  <!-- Hero Section mit Parallax-Effekt -->
+  <section class="hero-section">
+
+    <!--<div class="scroll-line"></div> -->
+<div class="hero-text">
+  <h1><span class="highlight">Ihr Experte für Computerlösungen und -service</span></h1>
+  <div class="logotext">
+  <img src="logotext.png">
+</div>
+  <span class="cta-text">"Custom Builds, wie selbst gemacht!"</span>
+
+  <div class="scroll-arrows">
+  <div class="arrow"></div>
+  <div class="arrow"></div>
+  <div class="arrow"></div>
+</div>
+
+</div>
+
+  </section>
+
+<section id="products" class="section">
+  <h2>Unsere Produkte</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <h3>Gaming PC's</h3>
+      <section class="about-text">
+  <h3>Qualität über Quantität – Maßgeschneiderte PCs für höchste Ansprüche</h3>
+  <p>Bei SamTech Systems steht <strong>Qualität</strong> im Mittelpunkt. Ich baue jeden PC aus sorgfältig ausgewählten, handverlesenen Komponenten, abgestimmt auf die individuellen Bedürfnisse meiner Kunden. Jeder Computer ist ein Unikat – statt auf Masse setze ich auf exzellente Einzelteile und präzise Handarbeit.</p>
+  <p>So entstehen leistungsstarke Systeme, die nicht nur heute überzeugen, sondern auch auf lange Sicht zuverlässig bleiben. <strong>Qualität über Quantität</strong> – für einen PC, der wirklich zu Ihnen passt.</p>
+  <a href="#products" class="product-link">➜Unsere Produkte ansehen</a>
+</section>
+    </div>
+<div class="product-card">
+  <img src="your-image.jpg" alt="Produktbild" class="product-image">
+</div>
+
+  </div>
+</section>
+
+
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <h2>Reparaturservice</h2>
+    <p>PC- und Handy-Reparaturen. Hochwertiger Service von Experten.</p>
+    <a href="#contact" class="cta-button">Reparatur buchen</a>
+  </section>
+
+  <!-- Über uns -->
+  <section id="about" class="section">
+    <h2>Über uns</h2>
+    <p>Samtech Systems steht für professionelle Computerlösungen und Reparaturen.</p>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="contact" class="section contact-section">
+    <h2>Kontakt</h2>
+    <form>
+      <input type="text" placeholder="Ihr Name" required>
+      <input type="email" placeholder="Ihre E-Mail" required>
+      <textarea placeholder="Ihre Nachricht"></textarea>
+      <button type="submit" class="cta-button">Absenden</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Samtech Systems © 2024</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercentage = (scrollPosition / documentHeight) * 100;
+      document.querySelector('.scroll-line').style.width = scrollPercentage + '%';
+    });
+
+let lastScrollPosition = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  const currentScrollPosition = window.pageYOffset;
+
+  if (currentScrollPosition > lastScrollPosition) {
+    // Wenn der Benutzer nach unten scrollt, verstecke die Navbar langsam
+    navbar.classList.add('hidden');
+  } else {
+    // Wenn der Benutzer nach oben scrollt, zeige die Navbar langsam an
+    navbar.classList.remove('hidden');
+  }
+
+  lastScrollPosition = currentScrollPosition;
+});
+
+
+  const navLinks = document.querySelector('.nav-links');
+  const blurOverlay = document.querySelector('.blur-overlay');
+
+  navLinks.addEventListener('mouseenter', () => {
+    blurOverlay.style.opacity = '1';
+    blurOverlay.style.pointerEvents = 'auto';
+  });
+
+  navLinks.addEventListener('mouseleave', () => {
+    blurOverlay.style.opacity = '0';
+    blurOverlay.style.pointerEvents = 'none';
+  });
+
+
+  </script>
+</body>
+</html>
