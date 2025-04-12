@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming PCs - SamTech Systems</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body class="gaming-pc-page">
+  <!-- Overlay für Navigationseffekte -->
+  <div class="blur-overlay"></div>
+  
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="hero-line"></div> <!-- Die animierte Linie -->
+      <div class="logo">
+        <img src="logo.png" alt="SamTech Systems Logo" href="index.html">
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#products">Produkte</a>
+          <ul class="dropdown">
+            <li><a href="#gaming-pcs">Gaming PCs</a></li>
+            <li><a href="#business-pcs">Business PCs</a></li>
+            <li><a href="#accessories">Zubehör</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#services">Service</a>
+          <ul class="dropdown">
+            <li><a href="#pc-repair">PC Reparatur</a></li>
+            <li><a href="#phone-repair">Handy Reparatur</a></li>
+            <li><a href="#consulting">Beratung</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#about">Über uns</a>
+          <ul class="dropdown">
+            <li><a href="#our-story">Unsere Geschichte</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#values">Werte</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#contact">Kontakt</a>
+          <ul class="dropdown">
+            <li><a href="#location">Standort</a></li>
+            <li><a href="#contact-form">Kontaktformular</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hauptinhalt für Gaming PCs -->
+  <div class="container">
+    <!-- Galerie -->
+    <div class="gallery">
+      <img src="gaming-pc1.jpg" alt="Gaming PC 1" class="gallery-image">
+      <img src="gaming-pc2.jpg" alt="Gaming PC 2" class="gallery-image">
+      <img src="gaming-pc3.jpg" alt="Gaming PC 3" class="gallery-image">
+    </div>
+
+    <!-- Spezifikationen -->
+    <div class="specifications">
+      <h2>Gaming PC Spezifikationen</h2>
+      <ul>
+        <li>Prozessor: Intel Core i9 oder AMD Ryzen 9</li>
+        <li>Grafikkarte: NVIDIA RTX 3080 oder besser</li>
+        <li>Arbeitsspeicher: 32 GB DDR4</li>
+        <li>Speicher: 1 TB NVMe SSD</li>
+        <li>Kühlung: Wasserkühlung mit RGB-Beleuchtung</li>
+        <li>Gehäuse: Premium-Gehäuse mit Glasfenster</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Script für Navbar und Scroll-Effekte
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercentage = (scrollPosition / documentHeight) * 100;
+      document.querySelector('.scroll-line').style.width = scrollPercentage + '%';
+    });
+
+    let lastScrollPosition = 0;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollPosition = window.pageYOffset;
+
+      if (currentScrollPosition > lastScrollPosition) {
+        // Verstecke die Navbar beim Scrollen nach unten
+        navbar.classList.add('hidden');
+      } else {
+        // Zeige die Navbar beim Scrollen nach oben
+        navbar.classList.remove('hidden');
+      }
+
+      lastScrollPosition = currentScrollPosition;
+    });
+
+    const navLinks = document.querySelector('.nav-links');
+    const blurOverlay = document.querySelector('.blur-overlay');
+
+    navLinks.addEventListener('mouseenter', () => {
+      blurOverlay.style.opacity = '1';
+      blurOverlay.style.pointerEvents = 'auto';
+    });
+
+    navLinks.addEventListener('mouseleave', () => {
+      blurOverlay.style.opacity = '0';
+      blurOverlay.style.pointerEvents = 'none';
+    });
+  </script>
+</body>
+</html>

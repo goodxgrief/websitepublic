@@ -49,6 +49,9 @@ h2 {
   top: 0;
   z-index: 20;
   transition: transform 0.6s ease;
+  align-items: center;
+  top: 0; /* Stelle sicher, dass sie oben auf der Seite bleibt */
+  left: 0; /* Links ausrichten */
 }
 /* Klasse für das Verstecken der Navbar */
 .navbar.hidden {
@@ -57,6 +60,7 @@ h2 {
 .nav-links {
   list-style: none;
   display: flex;
+  font-weight: bold;
 }
 .nav-links li a {
   background: #b381ff;
@@ -78,9 +82,10 @@ h2 {
   background-size: cover;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
+  align-items: ´flex start;
+  padding-top: 200px;
 }
 .hero-text {
   position: relative;
@@ -340,7 +345,6 @@ h2 {
   position: fixed;
   background: linear-gradient(90deg, #9e56ff, #e32eff);
   padding: 20px;
-  top: 30px;
   left: 0;
   width: 100vw;
   list-style: none;
@@ -385,7 +389,7 @@ h2 {
   color: whitesmoke;
   padding: 5px;
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.1s ease, color 0.1s ease;
   font-weight: bold;
   margin-bottom: 10px;
   opacity: 0;
@@ -429,4 +433,66 @@ footer {
   text-align: center;
   background: #111;
   color: #777;
+}
+
+/* Hintergrundfarbverlauf für die Gaming-PC-Seite */
+.gaming-pc-page {
+  background: linear-gradient(45deg, #9e56ff, #e32eff);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Hauptcontainer für Galerie und Spezifikationen */
+.container {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+/* Galerie */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gallery-image {
+  width: 300px;
+  height: auto;
+  border-radius: 15px; /* Abgerundete Ecken */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Leichter Schatten für den "Apple-Look" */
+}
+
+/* Spezifikationen */
+.specifications {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px; /* Abgerundeter Kasten */
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Größerer Schatten für einen modernen Look */
+}
+
+.specifications h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.specifications ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.specifications li {
+  font-size: 1.1em;
+  color: #ddd; /* Hellerer Text für Kontrast */
 }
