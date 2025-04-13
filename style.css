@@ -79,25 +79,54 @@ p {
 
 /* Hero Section mit Parallax-Effekt */
 .hero-section {
-  background-image: url('dein-bild.png'); /* Ersetze 'dein-bild.jpg' mit deinem Bild */
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   background-attachment: fixed;
+}
+
+.video-left, .video-right {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-attachment: fixed;
+}
+
+.hero-image {
+  grid-column: 2;
+  background-image: url('dein-bild.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: ´flex start;
-  padding-top: 200px;
+  background-attachment: fixed;
+  height: 100%;
+  box-shadow: 
+  0 0 20px rgba(0, 0, 0, 0.3),
+  0 0 40px rgba(0, 0, 0, 0.2);
 }
+
 .hero-text {
+  grid-column: 2;
+  z-index: 2;
   position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .hero-text h1 {
   font-size: 3em;
   margin-bottom: 20px;
@@ -113,7 +142,6 @@ p {
   font-weight: bold;
   transition: background 0.3s ease; /* Übergangseffekt für Hover */
 }
-
 
 .cta-button:hover {
   filter: brightness(1.1); /* Leichter Helligkeitsanstieg beim Hover */
@@ -163,7 +191,6 @@ p {
   transform: translateY(-5px); /* Leichtes Anheben */
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); /* Größerer weißer Schatten bei Hover */
 }
-
 
 /* Kontaktformular */
 .contact-section form {
@@ -223,7 +250,7 @@ p {
   }
 }
 .cta-text {
-  margin-top: 400px;
+  margin-top: 600px;
   display: inline-block; /* Damit der Text wie ein Button aussieht */
   padding: 10px 20px; /* Abstände beibehalten */
   background: rgb(0, 0, 0, 0.5); /* Gleicher Farbverlauf */
@@ -434,7 +461,6 @@ h2 {
   transition: opacity 0.3s ease;
 }
 
-
 /* Footer */
 footer {
   padding: 20px;
@@ -527,4 +553,62 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 80px 20px; /* Padding angepasst wegen der Navbar */
+}
+
+.product-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.product-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.product-pair {
+  display: flex;
+  gap: 20px;
+  min-width: 100%;
+  padding: 20px;
+  opacity: 0.3;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-pair.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.slider-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-arrow.prev {
+  left: 20px;
+}
+
+.slider-arrow.next {
+  right: 20px;
 }

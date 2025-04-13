@@ -57,12 +57,19 @@
 
   <!-- Hero Section mit Parallax-Effekt -->
   <section class="hero-section">
-
-    <!--<div class="scroll-line"></div> -->
-<div class="hero-text">
-  <h1><span class="highlight">Hausgemachte Speisen, Snacks und Getränke nach eigener Rezeptur! </span></h1>
-
-  <span class="cta-text">"mit veganen und glutenfreien Optionen!"</span>
+    <div class="hero-background">
+      <video class="video-left" autoplay muted loop playsinline>
+        <source src="left.mp4" type="video/mp4">
+      </video>
+      <div class="hero-image"></div>
+      <video class="video-right" autoplay muted loop playsinline>
+        <source src="right.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <div class="hero-text">
+      <!--<h1><span class="highlight">Hausgemachte Speisen, Snacks und Getränke nach eigener Rezeptur!</span></h1>-->
+      <span class="cta-text">"mit veganen und glutenfreien Optionen!"</span>
 <!--
   <div class="scroll-arrows">
   <div class="arrow"></div>
@@ -70,28 +77,67 @@
   <div class="arrow"></div>
 </div> -->
 
-</div>
-
+    </div>
   </section>
 
-<section id="products" class="section">
-  <h2>Unsere Produkte</h2>
-  <div class="product-grid">
-<div class="product-card">
-    <h3>Frische Bowls – mit Liebe gemacht</h3>
-    <section class="about-text">
-        <h3>Qualität & Frische – Hausgemachte Bowls für jeden Geschmack</h3>
-        <p>In unserer Küche steht <strong>Frische</strong> an erster Stelle. Jede Bowl wird individuell und mit sorgfältig ausgewählten, saisonalen Zutaten zubereitet. Wir legen großen Wert auf hausgemachte Dressings und knackiges Gemüse – jede Bowl ist ein geschmackvolles Unikat.</p>
-        <p>Dabei denken wir an alle: Egal ob vegan, vegetarisch oder glutenfrei – wir bieten für jeden die passende Bowl-Variation. <strong>Gesund und lecker</strong> – das ist unser Versprechen an Sie!</p>
-        <a href="#products" class="product-link">➜Unsere Bowls entdecken</a>
-    </section>
-</div>
-<div class="product-card">
-  <img src="your-image.jpg" alt="Produktbild" class="product-image">
-</div>
-
-  </div>
-</section>
+  <section id="products" class="section">
+    <h2>Unsere Produkte</h2>
+    <div class="product-slider-container">
+      <button class="slider-arrow prev">←</button>
+      
+      <div class="product-slider">
+        <!-- Erstes Paar -->
+        <div class="product-pair">
+          <div class="product-card">
+            <h3>Frische Bowls – mit Liebe gemacht</h3>
+            <section class="about-text">
+              <h3>Qualität & Frische – Hausgemachte Bowls für jeden Geschmack</h3>
+              <p>In unserer Küche steht <strong>Frische</strong> an erster Stelle. Jede Bowl wird individuell und mit sorgfältig ausgewählten, saisonalen Zutaten zubereitet. Wir legen großen Wert auf hausgemachte Dressings und knackiges Gemüse – jede Bowl ist ein geschmackvolles Unikat.</p>
+              <p>Dabei denken wir an alle: Egal ob vegan, vegetarisch oder glutenfrei – wir bieten für jeden die passende Bowl-Variation. <strong>Gesund und lecker</strong> – das ist unser Versprechen an Sie!</p>
+              <a href="#products" class="product-link">➜Unsere Bowls entdecken</a>
+          </section>
+          </div>
+          <div class="product-card">
+            <img src="your-image.jpg" alt="Bowl" class="product-image">
+          </div>
+        </div>
+  
+        <!-- Zweites Paar - Snacks -->
+        <div class="product-pair">
+          <div class="product-card">
+            <h3>Hausgemachte Snacks</h3>
+            <section class="about-text">
+              <h3>Snacks für jeden Geschmack - Handgemacht mit Liebe</h3>
+              <p>Entdecken Sie unsere vielfältige Auswahl an <strong>hausgemachten Snacks</strong>, die täglich frisch in unserer Küche zubereitet werden. Von herzhaften Quiches bis hin zu süßen Versuchungen - bei uns findet jeder seinen Lieblings-Snack.</p>
+              <p>Wir verwenden ausschließlich <strong>hochwertige Zutaten</strong> und achten besonders auf spezielle Ernährungsbedürfnisse. Vegan, glutenfrei oder klassisch - unsere kreativen Snack-Kreationen überzeugen durch authentischen Geschmack und Qualität.</p>
+              <a href="#snacks" class="product-link">➜Alle Snacks entdecken</a>
+            </section>
+          </div>
+          <div class="product-card">
+            <img src="snacks.jpg" alt="Hausgemachte Snacks" class="product-image">
+          </div>
+        </div>
+  
+        <!-- Drittes Paar - Getränke -->
+        <div class="product-pair">
+          <div class="product-card">
+            <h3>Erfrischende Getränke</h3>
+            <section class="about-text">
+              <h3>Hausgemachte Limonaden & kreative Getränke</h3>
+              <p>Unsere <strong>selbstgemachten Getränke</strong> sind mehr als nur Durstlöscher. Mit viel Kreativität und Liebe zum Detail kreieren wir täglich frische Limonaden, Smoothies und Säfte aus handverlesenen Früchten und Kräutern.</p>
+              <p>Von erfrischenden Minz-Zitronen-Limonaden bis hin zu vitaminreichen Smoothie-Kreationen - alle unsere Getränke sind <strong>100% natürlich</strong> und frei von künstlichen Zusätzen. Lassen Sie sich von unseren saisonalen Specials überraschen!</p>
+              <a href="#drinks" class="product-link">➜Getränkekarte ansehen</a>
+            </section>
+          </div>
+          <div class="product-card">
+            <img src="drinks.jpg" alt="Hausgemachte Getränke" class="product-image">
+          </div>
+        </div>
+      </div>
+  
+      <button class="slider-arrow next">→</button>
+    </div>
+  </section>
 
 
 
@@ -165,6 +211,36 @@ window.addEventListener('scroll', () => {
     blurOverlay.style.pointerEvents = 'none';
   });
 
+  
+const slider = document.querySelector('.product-slider');
+const pairs = document.querySelectorAll('.product-pair');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+
+function updateSlider() {
+  pairs.forEach((pair, index) => {
+    pair.classList.remove('active');
+    if (index === currentIndex) {
+      pair.classList.add('active');
+    }
+  });
+  
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + pairs.length) % pairs.length;
+  updateSlider();
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % pairs.length;
+  updateSlider();
+});
+
+// Initialisierung
+updateSlider();
 
   </script>
 </body>
