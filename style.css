@@ -158,20 +158,53 @@ p {
   align-items: center;
 }
 
+/* Styling für die Slider-Überschrift */
+.product-title {
+  position: absolute;
+  top: -40px; /* Nach oben verschoben, außerhalb der Karte */
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #6b996f;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transform: translateY(0); /* Startposition angepasst */
+  opacity: 1; /* Immer sichtbar */
+  z-index: 30; /* Höherer z-index, damit der Titel über allem liegt */
+}
+
+/* Aktive Karte zeigt Überschrift */
+.product-pair.active .product-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Produktkarten-Styling */
 .product-card {
-  background: linear-gradient(45deg, #9e56ff, #e32eff); /* Farbverlauf für die Karte */
-  border-radius: 15px; /* Abgerundete Ecken */
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Weißer Schatten rund um die Karte */
-  padding: 20px;
-  width: 400px; /* Feste Breite der Karte */
-  height: 500px; /* Feste Höhe der Karte */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition für Hover */
-  color: #fff; /* Textfarbe, damit der Text auf dem Farbverlauf sichtbar ist */
+  margin-top: 0; /* Entfernt den zusätzlichen Abstand */
+  position: relative;
+  width: 500px;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #4d7050, #6b996f);
+  border-radius: 15px;
+  padding: 10px; /* Abstand für den Rahmen */
+}
+
+/* Produktkarten-Styling */
+.product-pair {
+  min-width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Ändert die Richtung zu vertikal */
   justify-content: center;
   align-items: center;
+  opacity: 0.3;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+  padding-top: 40px; /* Platz für die Überschrift */
 }
 
 /* Text-Styling für die Karte */
@@ -345,17 +378,7 @@ p {
   font-size: 1.1em;
 }
 
-.product-card {
-  background: linear-gradient(45deg, #4d7050, #6b996f); /* Farbverlauf für den gesamten Kartenrahmen */
-  border-radius: 15px;
-  padding: 10px; /* Abstand für den Rahmen */
-  box-sizing: border-box;
-  width: 400px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .product-image {
   width: 100%;
@@ -429,6 +452,7 @@ h2 {
   opacity: 0;
   transform: translateY(-10px);
   animation: linkSlideIn 0.5s ease forwards;
+  padding-left: 15%;
 }
 
 .dropdown li:nth-child(1) a { animation-delay: 0.3s; }
@@ -558,9 +582,11 @@ footer {
 .product-slider-container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   overflow: hidden;
+  padding: 40px 0;
+  padding-top: 20px; /* Reduziert von 60px */
 }
 
 .product-slider {
@@ -569,15 +595,15 @@ footer {
 }
 
 .product-pair {
-  display: flex;
-  gap: 20px;
   min-width: 100%;
-  padding: 20px;
-  opacity: 0.3;
-  transform: scale(0.9);
-  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column; /* Ändert die Richtung zu vertikal */
   justify-content: center;
   align-items: center;
+  opacity: 0.3;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+  padding-top: 40px; /* Platz für die Überschrift */
 }
 
 .product-pair.active {
@@ -585,31 +611,113 @@ footer {
   transform: scale(1);
 }
 
+.product-title {
+  color: #6b996f;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  padding-top: 20px; /* Platz für die Überschrift */
+}
+
+.product-pair.active .product-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-content {
+  position: relative;
+  height: 100%;
+}
+
+
+
+.card-overlay {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 30px;
+  transition: all 0.5s ease;
+}
+
+.product-pair.active .card-overlay {
+  bottom: 0;
+}
+
+.card-description {
+  color: white;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease 0.2s;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6); /* Leicht transparenter Hintergrund */
+  backdrop-filter: blur(5px); /* Glaseffekt */
+  border-radius: 12px;
+  padding: 5px 6px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1); /* Subtiler innerer Glanz */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Feiner weißer Rand */
+}
+
+.product-pair.active .card-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-button {
+  padding: 12px 30px;
+  background: #6b996f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease 0.3s;
+}
+
+.product-pair.active .card-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-button:hover {
+  background: #4d7050;
+  transform: translateY(-2px);
+}
+
 .slider-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
   width: 50px;
   height: 50px;
+  background: rgba(107, 153, 111, 0.8);
+  border: none;
   border-radius: 50%;
+  color: white;
+  font-size: 24px;
   cursor: pointer;
   z-index: 10;
-  font-size: 24px;
   transition: all 0.3s ease;
 }
 
 .slider-arrow:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(77, 112, 80, 1);
 }
 
-.slider-arrow.prev {
+.prev {
   left: 20px;
 }
 
-.slider-arrow.next {
+.next {
   right: 20px;
 }
 

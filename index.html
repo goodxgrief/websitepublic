@@ -86,51 +86,47 @@
       <button class="slider-arrow prev">←</button>
       
       <div class="product-slider">
-        <!-- Erstes Paar -->
+        <!-- Erste Karte -->
         <div class="product-pair">
+          <h2 class="product-title">Unsere Bowls</h2>
           <div class="product-card">
-            <h3>Frische Bowls – mit Liebe gemacht</h3>
-            <section class="about-text">
-              <h3>Qualität & Frische – Hausgemachte Bowls für jeden Geschmack</h3>
-              <p>In unserer Küche steht <strong>Frische</strong> an erster Stelle. Jede Bowl wird individuell und mit sorgfältig ausgewählten, saisonalen Zutaten zubereitet. Wir legen großen Wert auf hausgemachte Dressings und knackiges Gemüse – jede Bowl ist ein geschmackvolles Unikat.</p>
-              <p>Dabei denken wir an alle: Egal ob vegan, vegetarisch oder glutenfrei – wir bieten für jeden die passende Bowl-Variation. <strong>Gesund und lecker</strong> – das ist unser Versprechen an Sie!</p>
-              <a href="#products" class="product-link">➜Unsere Bowls entdecken</a>
-          </section>
-          </div>
-          <div class="product-card">
-            <img src="your-image.jpg" alt="Bowl" class="product-image">
+            
+            <div class="card-content">
+              <img src="bowl1.jpg" alt="Bowl" class="product-image">
+              <div class="card-overlay">
+                <p class="card-description">Frisch zubereitete Bowls mit saisonalen Zutaten</p>
+                <button class="card-button">Entdecken</button>
+              </div>
+            </div>
           </div>
         </div>
-  
-        <!-- Zweites Paar - Snacks -->
+      
+        <!-- Zweite Karte -->
         <div class="product-pair">
+          <h2 class="product-title">Hausgemachte Snacks</h2>
           <div class="product-card">
-            <h3>Hausgemachte Snacks</h3>
-            <section class="about-text">
-              <h3>Snacks für jeden Geschmack - Handgemacht mit Liebe</h3>
-              <p>Entdecken Sie unsere vielfältige Auswahl an <strong>hausgemachten Snacks</strong>, die täglich frisch in unserer Küche zubereitet werden. Von herzhaften Quiches bis hin zu süßen Versuchungen - bei uns findet jeder seinen Lieblings-Snack.</p>
-              <p>Wir verwenden ausschließlich <strong>hochwertige Zutaten</strong> und achten besonders auf spezielle Ernährungsbedürfnisse. Vegan, glutenfrei oder klassisch - unsere kreativen Snack-Kreationen überzeugen durch authentischen Geschmack und Qualität.</p>
-              <a href="#snacks" class="product-link">➜Alle Snacks entdecken</a>
-            </section>
-          </div>
-          <div class="product-card">
-            <img src="snacks.jpg" alt="Hausgemachte Snacks" class="product-image">
+
+            <div class="card-content">
+              <img src="snacks.jpg" alt="Snacks" class="product-image">
+              <div class="card-overlay">
+                <p class="card-description">Kreative Snacks für jeden Geschmack</p>
+                <button class="card-button">Mehr erfahren</button>
+              </div>
+            </div>
           </div>
         </div>
-  
-        <!-- Drittes Paar - Getränke -->
+      
+        <!-- Dritte Karte -->
         <div class="product-pair">
+          <h2 class="product-title">Erfrischende Getränke</h2>
           <div class="product-card">
-            <h3>Erfrischende Getränke</h3>
-            <section class="about-text">
-              <h3>Hausgemachte Limonaden & kreative Getränke</h3>
-              <p>Unsere <strong>selbstgemachten Getränke</strong> sind mehr als nur Durstlöscher. Mit viel Kreativität und Liebe zum Detail kreieren wir täglich frische Limonaden, Smoothies und Säfte aus handverlesenen Früchten und Kräutern.</p>
-              <p>Von erfrischenden Minz-Zitronen-Limonaden bis hin zu vitaminreichen Smoothie-Kreationen - alle unsere Getränke sind <strong>100% natürlich</strong> und frei von künstlichen Zusätzen. Lassen Sie sich von unseren saisonalen Specials überraschen!</p>
-              <a href="#drinks" class="product-link">➜Getränkekarte ansehen</a>
-            </section>
-          </div>
-          <div class="product-card">
-            <img src="drinks.jpg" alt="Hausgemachte Getränke" class="product-image">
+            <div class="card-content">
+              <img src="drinks.jpg" alt="Getränke" class="product-image">
+              <div class="card-overlay">
+                <p class="card-description">Hausgemachte Limonaden & Smoothies</p>
+                <button class="card-button">Zur Auswahl</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -266,6 +262,7 @@ nextBtn.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % pairs.length;
   updateSlider();
 });
+
 
 // Initialisierung
 updateSlider();
