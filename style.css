@@ -219,11 +219,7 @@ p {
   color: #e0e0e0;
 }
 
-/* Hover-Effekt */
-.product-card:hover {
-  transform: translateY(-5px); /* Leichtes Anheben */
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); /* Größerer weißer Schatten bei Hover */
-}
+
 
 /* Kontaktformular */
 .contact-section form {
@@ -680,7 +676,7 @@ footer {
   cursor: pointer;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.5s ease 0.3s;
+  transition: all 0.3s ease 0.3s;
 }
 
 .product-pair.active .card-button {
@@ -691,6 +687,7 @@ footer {
 .card-button:hover {
   background: #4d7050;
   transform: translateY(-2px);
+  transition: all 0.2s ease;
 }
 
 .slider-arrow {
@@ -783,4 +780,26 @@ footer {
   .map-container {
     width: 100%;
   }
+}
+
+/* Styling für die Indikator-Punkte */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(107, 153, 111, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #6b996f;
+  transform: scale(1.2);
 }

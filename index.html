@@ -81,7 +81,6 @@
   </section>
 
   <section id="products" class="section">
-    <h2>Unsere Produkte</h2>
     <div class="product-slider-container">
       <button class="slider-arrow prev">←</button>
       
@@ -132,6 +131,11 @@
       </div>
   
       <button class="slider-arrow next">→</button>
+    </div>
+    <div class="slider-dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
     </div>
   </section>
 
@@ -251,7 +255,24 @@ function updateSlider() {
   });
   
   slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  
+  // Aktualisiere die Dots
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, index) => {
+    dot.classList.remove('active');
+    if (index === currentIndex) {
+      dot.classList.add('active');
+    }
+  });
 }
+
+// Optional: Klick-Event für die Dots
+document.querySelectorAll('.dot').forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentIndex = index;
+    updateSlider();
+  });
+});
 
 prevBtn.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + pairs.length) % pairs.length;
