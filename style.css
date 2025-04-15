@@ -47,7 +47,8 @@ p {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background: rgba(255, 255, 255);
+  background: rgb(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
   top: 0;
@@ -74,7 +75,8 @@ p {
   text-decoration: none;
 }
 .nav-links li a:hover {
-  color: #fff; /* Optional: Wechselt die Farbe bei Hover zu Weiß */
+  color: #363636; /* Optional: Wechselt die Farbe bei Hover zu Weiß */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero Section mit Parallax-Effekt */
@@ -513,8 +515,8 @@ h2 {
 
 /* Hover-Effekt für die Links */
 .dropdown li a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes linkSlideIn {
