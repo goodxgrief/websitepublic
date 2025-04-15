@@ -873,3 +873,41 @@ footer {
 .logo a:hover img {
   opacity: 0.8;
 }
+
+/* Desktop-Version */
+.mobile-button {
+  display: none;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .desktop-button {
+    display: none;
+  }
+
+  .mobile-button {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    padding: 12px 25px;
+    background: #6b996f;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-button:hover {
+    background: #4d7050;
+    transform: translateY(-2px);
+  }
+}
+
+/* Pfeile auf Mobile ausblenden */
+@media screen and (max-width: 768px) {
+  .slider-arrow {
+    display: none;
+  }
+}

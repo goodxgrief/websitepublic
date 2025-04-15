@@ -91,15 +91,15 @@
         <div class="product-pair">
           <h2 class="product-title">Unsere Bowls</h2>
           <div class="product-card">
-            
             <div class="card-content">
               <img src="bowl1.jpg" alt="Bowl" class="product-image">
               <div class="card-overlay">
                 <p class="card-description">Frisch zubereitete Bowls mit saisonalen Zutaten</p>
-                <button class="card-button">Entdecken</button>
+                <button class="card-button desktop-button">Entdecken</button>
               </div>
             </div>
           </div>
+          <button class="card-button mobile-button">Entdecken</button>
         </div>
       
         <!-- Zweite Karte -->
@@ -111,10 +111,11 @@
               <img src="snacks.jpg" alt="Snacks" class="product-image">
               <div class="card-overlay">
                 <p class="card-description">Kreative Snacks für jeden Geschmack</p>
-                <button class="card-button">Mehr erfahren</button>
+                <button class="card-button desktop-button">Mehr erfahren</button>
               </div>
             </div>
           </div>
+          <button class="card-button mobile-button">Mehr erfahren</button>
         </div>
       
         <!-- Dritte Karte -->
@@ -125,10 +126,11 @@
               <img src="drinks.jpg" alt="Getränke" class="product-image">
               <div class="card-overlay">
                 <p class="card-description">Hausgemachte Limonaden & Smoothies</p>
-                <button class="card-button">Zur Auswahl</button>
+                <button class="card-button desktop-button">Zur Auswahl</button>
               </div>
             </div>
           </div>
+          <button class="card-button mobile-button">Mehr Entdecken</button> <!-- Button innerhalb des product-pair -->
         </div>
       </div>
   
@@ -285,7 +287,33 @@ nextBtn.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % pairs.length;
   updateSlider();
 });
+let touchStartX = 0;
+let touchEndX = 0;
 
+// Touch Events für den Slider
+document.querySelector('.product-slider').addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+document.querySelector('.product-slider').addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeThreshold = 50; // Minimale Swipe-Distanz
+    const difference = touchStartX - touchEndX;
+
+    if (Math.abs(difference) < swipeThreshold) return;
+
+    if (difference > 0) {
+        // Nach links swipen -> nächste Karte
+        document.querySelector('.next').click();
+    } else {
+        // Nach rechts swipen -> vorherige Karte
+        document.querySelector('.prev').click();
+    }
+}
 
 // Initialisierung
 updateSlider();
@@ -293,3 +321,4 @@ updateSlider();
   </script>
 </body>
 </html>
+```html
