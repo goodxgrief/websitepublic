@@ -88,27 +88,9 @@ p {
   overflow: hidden;
 }
 
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  background-attachment: fixed;
-}
-
-.video-left, .video-right {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  background-attachment: fixed;
-}
-
 .hero-image {
   grid-column: 2;
-  background-image: url('dein-bild.png');
+  background-image: url('hero.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -117,6 +99,47 @@ p {
   box-shadow: 
   0 0 20px rgba(0, 0, 0, 0.3),
   0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Hero */
+.mobile-hero {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    display: none; /* Hide desktop hero */
+  }
+
+  .mobile-hero {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-top: 60px; /* Space for navbar */
+  }
+
+  .mobile-hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .mobile-hero-text {
+    position: absolute;
+    bottom: 30%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .cta-text {
+    margin-top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+  }
 }
 
 .hero-text {
