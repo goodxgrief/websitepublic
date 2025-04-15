@@ -860,3 +860,16 @@ footer {
   background: #6b996f;
   transform: scale(1.2);
 }
+
+.logo a {
+  display: block;
+  cursor: pointer;
+}
+
+.logo img {
+  transition: opacity 0.3s ease;
+}
+
+.logo a:hover img {
+  opacity: 0.8;
+}
