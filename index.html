@@ -12,48 +12,127 @@
   <!-- Navigation -->
   <header>
     <nav class="navbar">
-           <div class="hero-line"></div> <!-- Die animierte Linie -->
       <div class="logo">
         <a href="index.html">
           <img src="logo.png" alt="Studentenfutter Logo">
-      </a>
-    </div>
-      <ul class="nav-links">
-  <li>
-    <a href="#products">Gerichte</a>
-    <ul class="dropdown">
-      <li><a href="gaming-pcs.html">Bowls</a></li>
-      <li><a href="#business-pcs">Snacks</a></li>
-      <li><a href="#accessories">Getränke</a></li>
-      <li><a href="#accessories">Speisekarte</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#services">Angebote</a>
-    <ul class="dropdown">
-      <li><a href="#pc-repair">Tagesgerichte</a></li>
-      <li><a href="#phone-repair">Saisonales</a></li>
-      <li><a href="#consulting">Angebote</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#about">Über uns</a>
-    <ul class="dropdown">
-      <li><a href="#our-story">Unsere Geschichte</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#values">Werte</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#contact">Kontakt</a>
-    <ul class="dropdown">
-      <li><a href="#location">Standort</a></li>
-      <li><a href="#contact-form">Kontaktformular</a></li>
-      <li><a href="#support">Support</a></li>
-    </ul>
-  </li>
-</ul>
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation (bestehende Struktur, die unverändert bleibt) -->
+      <ul class="nav-links desktop-nav">
+        <li>
+          <a href="#products">Gerichte</a>
+          <ul class="dropdown">
+            <li><a href="gaming-pcs.html">Bowls</a></li>
+            <li><a href="#business-pcs">Snacks</a></li>
+            <li><a href="#accessories">Getränke</a></li>
+            <li><a href="#accessories">Speisekarte</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#services">Angebote</a>
+          <ul class="dropdown">
+            <li><a href="#pc-repair">Tagesgerichte</a></li>
+            <li><a href="#phone-repair">Saisonales</a></li>
+            <li><a href="#consulting">Angebote</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#about">Über uns</a>
+          <ul class="dropdown">
+            <li><a href="#our-story">Unsere Geschichte</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#values">Werte</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#contact">Kontakt</a>
+          <ul class="dropdown">
+            <li><a href="#location">Standort</a></li>
+            <li><a href="#contact-form">Kontaktformular</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <!-- Mobile Navigation -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="mobile-nav">
+        <!-- Hauptmenü, mobile Version -->
+        <ul class="mobile-nav-links">
+          <li>
+            <a href="#" class="mobile-nav-item" data-submenu="gerichte">Gerichte</a>
+          </li>
+          <li>
+            <a href="#" class="mobile-nav-item" data-submenu="angebote">Angebote</a>
+          </li>
+          <li>
+            <a href="#" class="mobile-nav-item" data-submenu="about">Über uns</a>
+          </li>
+          <li>
+            <a href="#" class="mobile-nav-item" data-submenu="kontakt">Kontakt</a>
+          </li>
+        </ul>
 
+        <!-- Submenu "Gerichte" (bereits vorhanden) -->
+        <div class="mobile-submenu" id="gerichte">
+          <div class="submenu-header">
+            <button class="back-btn">←</button>
+            <span>Gerichte</span>
+          </div>
+          <ul>
+            <li><a href="gaming-pcs.html">Bowls</a></li>
+            <li><a href="#business-pcs">Snacks</a></li>
+            <li><a href="#accessories">Getränke</a></li>
+            <li><a href="#accessories">Speisekarte</a></li>
+          </ul>
+        </div>
+
+        <!-- Submenu "Angebote" -->
+        <div class="mobile-submenu" id="angebote">
+          <div class="submenu-header">
+            <button class="back-btn">←</button>
+            <span>Angebote</span>
+          </div>
+          <ul>
+            <li><a href="#pc-repair">Tagesgerichte</a></li>
+            <li><a href="#phone-repair">Saisonales</a></li>
+            <li><a href="#consulting">Angebote</a></li>
+          </ul>
+        </div>
+
+        <!-- Submenu "Über uns" -->
+        <div class="mobile-submenu" id="about">
+          <div class="submenu-header">
+            <button class="back-btn">←</button>
+            <span>Über uns</span>
+          </div>
+          <ul>
+            <li><a href="#our-story">Unsere Geschichte</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#values">Werte</a></li>
+          </ul>
+        </div>
+
+        <!-- Submenu "Kontakt" -->
+        <div class="mobile-submenu" id="kontakt">
+          <div class="submenu-header">
+            <button class="back-btn">←</button>
+            <span>Kontakt</span>
+          </div>
+          <ul>
+            <li><a href="#location">Standort</a></li>
+            <li><a href="#contact-form">Kontaktformular</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      
     </nav>
   </header>
 
@@ -227,7 +306,7 @@ const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
   const currentScrollPosition = window.pageYOffset;
-
+if(window.innerWidth > 768) {
   if (currentScrollPosition > lastScrollPosition) {
     // Wenn der Benutzer nach unten scrollt, verstecke die Navbar langsam
     navbar.classList.add('hidden');
@@ -237,12 +316,13 @@ window.addEventListener('scroll', () => {
   }
 
   lastScrollPosition = currentScrollPosition;
+}
 });
 
 
   const navLinks = document.querySelector('.nav-links');
   const blurOverlay = document.querySelector('.blur-overlay');
-
+  if(window.innerWidth > 768) {
   navLinks.addEventListener('mouseenter', () => {
     blurOverlay.style.opacity = '1';
     blurOverlay.style.pointerEvents = 'auto';
@@ -252,6 +332,7 @@ window.addEventListener('scroll', () => {
     blurOverlay.style.opacity = '0';
     blurOverlay.style.pointerEvents = 'none';
   });
+}
 
   
 const slider = document.querySelector('.product-slider');
@@ -328,6 +409,37 @@ function handleSwipe() {
 // Initialisierung
 updateSlider();
 
+  // Auswahl der Elemente
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+  const backBtns = document.querySelectorAll('.back-btn');
+  
+  // Hamburger-Button schaltet das Mobile-Menü ein/aus
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+  });
+  
+  // Klick auf einen Hauptmenü-Link öffnet das zugehörige Submenu
+  mobileNavItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = item.getAttribute('data-submenu');
+      const submenu = document.getElementById(target);
+      if(submenu) {
+        submenu.classList.add('active');
+      }
+    });
+  });
+  
+  // "Zurück"-Button schließt das Submenu, sodass wieder das Hauptmenü zu sehen ist
+  backBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const submenu = btn.closest('.mobile-submenu');
+      submenu.classList.remove('active');
+    });
+  });
   </script>
 </body>
 </html>
