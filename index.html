@@ -232,8 +232,24 @@
     </div>
   </section>
 
+  <section id="angebot" class="section angebot-section">
+    <h2>Angebot</h2>
+    <div class="angebot-container">
+
+      <div class="angebot-content">
+        <h2> Waffeln</h2>
+        <p>Unser neuestes Special - nur Donnerstag-Samstag erhältlich!</p>
+        <a href="zielseite.html" class="angebot-button">Mehr Angebote</a>
+      </div>
+
+      <div class="angebot-image">
+        <img src="offer.png" alt="Angebot Bild">
+      </div>
+    </div>
+  </section>
+
   <section id="location" class="section">
-    <h2>Wo Sie uns finden</h2>
+    <h2>Komm uns besuchen</h2>
     <div class="location-container">
       <div class="opening-hours">
         <h3>Öffnungszeiten</h3>
@@ -440,6 +456,19 @@ updateSlider();
       submenu.classList.remove('active');
     });
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const angebotContainer = document.querySelector('.angebot-container');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        angebotContainer.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  observer.observe(angebotContainer);
+});
   </script>
 </body>
 </html>
