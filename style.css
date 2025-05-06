@@ -215,8 +215,8 @@ p {
 /* Produktkarten-Styling */
 .product-card {
   position: relative;
-  width: 500px;
-  height: 600px;
+  width: min(500px, 90vw); /* Maximal 500px oder 90% der Viewport-Breite */
+  height: min(600px, 80vh); /* Maximal 600px oder 80% der Viewport-Höhe */
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -1123,7 +1123,7 @@ footer {
 .angebot-container {
   background: #ffbebe;
   border-radius: 20px;
-  max-width: 1200px;
+  width: min(900px, 90%);
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
