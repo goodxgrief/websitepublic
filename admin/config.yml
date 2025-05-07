@@ -2,14 +2,14 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/img"
-public_folder: "/img"
+media_folder: "."       # Pfad relativ zum Repo-Root → speichert Uploads im Root-Verzeichnis  
+public_folder: "/"      # URL-Pfad im gebauten Site → /<dateiname>
 
 collections:
   - name: "pages"
     label: "Seiten"
     files:
-      - file: "../index.html"
+      - file: "index.html"
         label: "Startseite"
         name: "startseite"
         fields:
