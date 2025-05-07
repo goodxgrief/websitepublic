@@ -1,0 +1,74 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "pages"
+    label: "Seiten"
+    files:
+      - file: "../index.html"
+        label: "Startseite"
+        name: "startseite"
+        fields:
+          - label: "Logo"
+            name: "logo"
+            widget: "image"
+            hint: "Bild für das Logo (logo.png)"
+          - label: "Navigation Links"
+            name: "nav_links"
+            widget: "list"
+            fields:
+              - { label: "Link-Text", name: "text", widget: "string" }
+              - { label: "Link-URL", name: "url", widget: "string" }
+              - label: "Submenu"
+                name: "submenu"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Sub-Link Text", name: "sub_text", widget: "string" }
+                  - { label: "Sub-Link URL", name: "sub_url", widget: "string" }
+          - label: "Hero Text"
+            name: "hero_text"
+            widget: "string"
+            default: '"mit veganen und glutenfreien Optionen!"'
+          - label: "Hero Bild"
+            name: "hero_image"
+            widget: "image"
+            hint: "Bild für die Desktop Hero Section"
+          - label: "Mobile Hero Bild"
+            name: "mobile_hero_image"
+            widget: "image"
+            hint: "Bild für die Mobile Hero Section"
+          - label: "Produktkarten"
+            name: "product_cards"
+            widget: "list"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Bild", name: "image", widget: "image" }
+              - { label: "Beschreibung", name: "description", widget: "text" }
+              - { label: "Button Text", name: "button_text", widget: "string" }
+              - { label: "Button URL", name: "button_url", widget: "string" }
+          - label: "Angebot"
+            name: "angebot"
+            widget: "object"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Beschreibung", name: "description", widget: "text" }
+              - { label: "Button Text", name: "button_text", widget: "string" }
+              - { label: "Button URL", name: "button_url", widget: "string" }
+              - { label: "Bild", name: "image", widget: "image" }
+          - label: "Standort & Öffnungszeiten"
+            name: "location"
+            widget: "object"
+            fields:
+              - label: "Öffnungszeiten"
+                name: "opening_hours"
+                widget: "list"
+                fields:
+                  - { label: "Tag", name: "day", widget: "string" }
+                  - { label: "Zeiten", name: "hours", widget: "string" }
+              - { label: "Adresse", name: "address", widget: "text" }
+              - { label: "Google Map Embed URL", name: "map_url", widget: "string" }
