@@ -215,8 +215,8 @@ p {
 /* Produktkarten-Styling */
 .product-card {
   position: relative;
-  width: min(500px, 90vw); /* Maximal 500px oder 90% der Viewport-Breite */
-  height: min(600px, 80vh); /* Maximal 600px oder 80% der Viewport-Höhe */
+  width: 500px;
+  height: 600px;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -1123,7 +1123,7 @@ footer {
 .angebot-container {
   background: #ffbebe;
   border-radius: 20px;
-  width: min(900px, 90%);
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -1131,7 +1131,6 @@ footer {
   overflow: hidden;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  max-height: 80vh;
 }
 
 /* Bildbereich links */
@@ -1190,11 +1189,12 @@ footer {
     padding: 15px;
   }
 
-  .angebot-image img {
+  .angebot-image {
+    /* Änderungen hier */
     width: 100%;
-    height: 100%;
-    object-fit: contain; /* Sorgt dafür, dass das Bild nicht zugeschnitten wird */
-}
+    height: auto;
+    margin-bottom: 20px;
+  }
 
   .angebot-image img {
     width: 100%;
@@ -1207,12 +1207,5 @@ footer {
     transform: translateY(100px);
     transition: transform 0.8s ease, opacity 0.8s ease;
     width: 100%;
-  }
-}
-
-/* Für Laptops: max. Höhe des Angebots auf 80% der Viewport-Höhe begrenzen */
-@media screen and (min-width: 1024px) {
-  .angebot-container {
-      max-height: 80vh;
   }
 }
