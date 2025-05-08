@@ -13,6 +13,10 @@
       margin: 0;
       padding: 0;
     }
+    .product-carousel-container h2 {
+        padding-bottom: 20px;
+        /* weitere Stile hier */
+    }
     /* Container nur für die Produkt-Karussell-Sektion */
     .product-carousel-container {
         display: flex;
@@ -20,8 +24,8 @@
         align-items: center;
         padding: 40px;
         --font-family: 'Inter', sans-serif;
-        --card-width: 300px;
-        --card-height: 400px;
+        --card-width: 400px;
+        --card-height: 500px;
         --card-radius: 12px;
         --gap: 1.5rem;
         --text-color: #333;
@@ -105,7 +109,8 @@
     }
     .card-overlay p {
       font-size: 0.9rem;
-      color: var(--text-color);
+      color: rgb(31, 29, 29);
+      font-weight: bold;
     }
     .card-button {
       position: absolute;
