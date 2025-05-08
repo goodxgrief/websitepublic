@@ -158,7 +158,6 @@ body {
     display: none;
     position: relative;
     width: 100%;
-    margin-top: 60px; /* Space for navbar */
   }
   
   .mobile-hero-image {
@@ -506,4 +505,11 @@ body {
   }
 
   
-  
+  @media screen and (max-width: 768px) {
+    /* Überschreibt die 100vh der hero-section nur in der Mobile-Variante */
+    .hero-section.mobile-hero {
+      height: auto !important;
+      /* falls Du noch einen Mindestabstand haben willst: */
+      /* min-height: 200px; */
+    }
+  }
