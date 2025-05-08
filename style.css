@@ -1215,6 +1215,5 @@ footer {
 @media screen and (min-width: 1024px) {
   .angebot-container {
       max-height: 80vh;
-      overflow-y: auto; /* Aktiviert Scrollen, falls der Inhalt zu groß sein sollte */
   }
 }
