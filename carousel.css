@@ -137,6 +137,7 @@
         .product-carousel-container {
           --card-width: 200px;
           --card-height: 300px;
+          overflow: hidden;
         }
         .category .card-overlay {
             display: none;
