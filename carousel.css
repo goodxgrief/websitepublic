@@ -129,10 +129,25 @@
     }
     .card-button:hover { background-color: #5e8e63; }
 
+    #carousel-heading {
+        display: none;
+    }
+
     @media (max-width: 768px) {
         .product-carousel-container {
           --card-width: 200px;
           --card-height: 300px;
         }
+        .category .card-overlay {
+            display: none;
       }
-      
+      #carousel-heading {
+        display: block;
+        color: #6b996f;
+        padding-bottom: 20px;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+    }

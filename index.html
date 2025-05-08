@@ -176,6 +176,7 @@
 
   <div class="product-carousel-container">
     <h2>Unsere Produkte</h2>
+    <h3 id="carousel-heading">Frische Bowls</h3>
     <div class="carousel">
       <!-- Drei Karten übereinander -->
       <div class="category position-0" style="background-image: url('produktbilder/bowl1.jpg');">
@@ -300,26 +301,69 @@ if(window.innerWidth > 768) {
     });
   });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const cards = Array.from(document.querySelectorAll('.category'));
-      let idx = 0;
-      function update() {
-        cards.forEach((card, i) => {
-          const pos = (i - idx + cards.length) % cards.length;
-          card.classList.remove('position-0', 'position-1', 'position-2');
-          card.classList.add(`position-${pos}`);
-        });
-      }
-      document.querySelector('.nav-prev').addEventListener('click', () => {
-        idx = (idx - 1 + cards.length) % cards.length;
-        update();
-      });
-      document.querySelector('.nav-next').addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = Array.from(document.querySelectorAll('.category'));
+  const heading = document.getElementById('carousel-heading');
+
+  // Titel-Array, Reihenfolge entspricht den Positionen der Karten
+  const titles = [
+    'Ausgewogene Snacks',
+    'Hausgemachte Drinks',
+    'Frische Bowls'
+  ];
+
+  let idx = 0;
+
+  function update() {
+    cards.forEach((card, i) => {
+      const pos = (i - idx + cards.length) % cards.length;
+      card.classList.remove('position-0', 'position-1', 'position-2');
+      card.classList.add(`position-${pos}`);
+    });
+    heading.textContent = titles[idx];
+  }
+
+  // Pfeil-Buttons
+  document.querySelector('.nav-prev').addEventListener('click', () => {
+    idx = (idx - 1 + cards.length) % cards.length;
+    update();
+  });
+  document.querySelector('.nav-next').addEventListener('click', () => {
+    idx = (idx + 1) % cards.length;
+    update();
+  });
+
+  // Swipe-Funktion für Smartphone (max. 768px)
+  if (window.innerWidth <= 768) {
+    const carousel = document.querySelector('.carousel');
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50; // Mindestdistanz in Pixeln
+
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      if (touchStartX - touchEndX > swipeThreshold) {
+        // Swipe nach links: nächste Karte
         idx = (idx + 1) % cards.length;
         update();
-      });
-      update();
-    });
+      } else if (touchEndX - touchStartX > swipeThreshold) {
+        // Swipe nach rechts: vorherige Karte
+        idx = (idx - 1 + cards.length) % cards.length;
+        update();
+      }
+    }
+  }
+
+  update();
+});
   </script>
 </body>
 </html>
