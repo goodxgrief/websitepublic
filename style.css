@@ -1190,12 +1190,11 @@ footer {
     padding: 15px;
   }
 
-  .angebot-image {
-    /* Änderungen hier */
+  .angebot-image img {
     width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
+    height: 100%;
+    object-fit: contain; /* Sorgt dafür, dass das Bild nicht zugeschnitten wird */
+}
 
   .angebot-image img {
     width: 100%;
