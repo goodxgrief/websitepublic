@@ -1,0 +1,145 @@
+ :root {
+    --card-bg: #ffbebd;
+    --btn-bg: #a72953;
+    --btn-text: #ffffff;
+    --border-radius: 16px;
+    --shadow: rgba(0, 0, 0, 0.06) 0px 10px 20px;
+    --font:Roboto;
+  }
+
+  .angebot-section {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-title {
+    text-align: center;
+    font-family: var(--font);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  /* Desktop: Text left, Image right */
+  @media (min-width: 600px) {
+    .card {
+      flex-direction: row;
+    }
+    .content, .image-wrapper {
+      flex: 1;
+    }
+  }
+
+  .content {
+    padding: 1.5rem;
+    font-family: var(--font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .offer-heading {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+  }
+
+  .action-btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font);
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: center;
+    transition: opacity 0.2s ease;
+  }
+
+  .action-btn:hover {
+    opacity: 0.85;
+  }
+
+  .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    /* Round only the image side corners to match card */
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+
+  .card:hover .image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .section-title {
+  text-align: center;
+  font-family: var(--font);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #a72953; /* Hier die gewünschte Farbe eintragen */
+}
+
+  /* Mobile Anpassungen */
+  @media (max-width: 599px) {
+    .angebot-section {
+      padding: 1rem;
+    }
+    .card {
+      flex-direction: column;
+    }
+    .content {
+      padding: 1rem;
+    }
+    .action-btn {
+      width: 100%;
+      text-align: center;
+    }
+    .image-wrapper {
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      width: 100%;
+      height: auto;
+    }
+    .image-wrapper img {
+      height: auto;
+    }
+  }

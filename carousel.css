@@ -151,4 +151,9 @@
     .nav-btn {
         display: none;
     }
+
+      .card-button {
+    padding: 1px 4px; /* entfernt das Padding */
+    background-color: #4a7c50; /* ein etwas geänderter Hintergrund */
+  }
     }

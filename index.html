@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="carousel.css">
   <link rel="stylesheet" href="map.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="angebot.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
@@ -181,19 +182,33 @@
       <!-- Drei Karten übereinander -->
       <div class="category position-0" style="background-image: url('produktbilder/bowl1.jpg');">
         <div class="card-overlay"><p>Frische Bowls</p></div>
-        <button class="card-button" href="zielseite.html">Mehr erfahren</button>
+        <button class="card-button" data-href="#zielseite.html">Mehr erfahren</button>
       </div>
       <div class="category position-1" style="background-image: url('produktbilder/snacks.jpg');">
         <div class="card-overlay"><p>ausgewogene Snacks</p></div>
-        <button class="card-button" href="zielseite.html">Mehr erfahren</button>
+        <button class="card-button" data-href="#zielseite.html">Mehr erfahren</button>
       </div>
       <div class="category position-2" style="background-image: url('produktbilder/drinks.jpg');">
         <div class="card-overlay"><p>Hausgemachte Drinks</p></div>
-        <button class="card-button" href="zielseite.html">Mehr erfahren</button>
+        <button class="card-button" data-href="#zielseite.html">Mehr erfahren</button>
       </div>
       <!-- Navigationspfeile zuletzt einfügen -->
       <button class="nav-btn nav-prev" aria-label="Vorherige Karte">❮</button>
       <button class="nav-btn nav-next" aria-label="Nächste Karte">❯</button>
+    </div>
+  </div>
+
+  <!-- Angebot Section for Restaurant Website -->
+<section class="angebot-section">
+  <h2 class="section-title">Neu im Angebot</h2>
+  <div class="card">
+    <div class="content">
+      <h3 class="offer-heading">Hausgemachte Waffeln!</h3>
+      <p class="description">Hier steht die Beschreibung Ihres Angebots. Verwöhnen Sie Ihre Gäste mit unserem leckeren Special!</p>
+      <button class="action-btn">Mehr erfahren</button>
+    </div>
+    <div class="image-wrapper">
+      <img src="offer.png" alt="Leckeres Gericht" />
     </div>
   </div>
 

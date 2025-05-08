@@ -288,10 +288,6 @@ body {
       padding: 10px;
     }
   
-    .card-button {
-      padding: 10px 20px;
-      font-size: 0.9em;
-    }
   
     .slider-arrow {
       width: 40px;
@@ -312,7 +308,7 @@ body {
   
     .hero-text {
       position: absolute;
-      bottom: 45%;
+      bottom: 30%;
       width: 100%;
       text-align: center;
       z-index: 2;
