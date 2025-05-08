@@ -1,46 +1,19 @@
----
-logo: logo.png
-nav_links:
-  - text: Gerichte
-    url: "#products"
-    submenu:
-      - sub_text: Bowls
-        sub_url: gaming-pcs.html
-hero_text: hiiiiiiiiiiiiiii
-hero_image: desktop-hero.jpg
-mobile_hero_image: mobile-hero.png
-product_cards:
-  - title: Unsere Bowls
-    image: bowl.jpg
-    description: Leckere Bowls...
-    button_text: Mehr erfahren
-    button_url: "#"
-angebot:
-  title: Tagesgerichte
-  description: Frisch und lecker.
-  button_text: Ansehen
-  button_url: "#"
-  image: angebot.jpg
-location:
-  opening_hours:
-    - day: Montag - Freitag
-      hours: 10:00 - 18:00
-  address: Musterstraße 1, 12345 Musterstadt
-  map_url: https://maps.google.com/...
----
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studentenfutter Giessen</title>
+  <title>Studentenfutter Gießen</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="map.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-<div class="blur-overlay"></div>
-  <!-- Navigation -->
+  <div class="blur-overlay"></div>
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -166,8 +139,7 @@ location:
       
     </nav>
   </header>
-
-  <!-- Desktop Hero Section -->
+  
   <section class="hero-section desktop-hero">
     <div class="hero-background">
       <video class="video-left" autoplay muted loop playsinline>
@@ -202,82 +174,27 @@ location:
     </div>
   </section>
 
-  <section id="products" class="section">
-    <div class="product-slider-container">
-      <button class="slider-arrow prev">←</button>
-      
-      <div class="product-slider">
-        <!-- Erste Karte -->
-        <div class="product-pair">
-          <h2 class="product-title">Unsere Bowls</h2>
-          <div class="product-card">
-            <div class="card-content">
-              <img src="bowl1.jpg" alt="Bowl" class="product-image">
-              <div class="card-overlay">
-                <p class="card-description">Frisch zubereitete Bowls mit saisonalen Zutaten</p>
-                <button class="card-button desktop-button">Entdecken</button>
-              </div>
-            </div>
-          </div>
-          <button class="card-button mobile-button">Entdecken</button>
-        </div>
-      
-        <!-- Zweite Karte -->
-        <div class="product-pair">
-          <h2 class="product-title">Hausgemachte Snacks</h2>
-          <div class="product-card">
-
-            <div class="card-content">
-              <img src="snacks.jpg" alt="Snacks" class="product-image">
-              <div class="card-overlay">
-                <p class="card-description">Kreative Snacks für jeden Geschmack</p>
-                <button class="card-button desktop-button">Mehr erfahren</button>
-              </div>
-            </div>
-          </div>
-          <button class="card-button mobile-button">Mehr erfahren</button>
-        </div>
-      
-        <!-- Dritte Karte -->
-        <div class="product-pair">
-          <h2 class="product-title">Erfrischende Getränke</h2>
-          <div class="product-card">
-            <div class="card-content">
-              <img src="drinks.jpg" alt="Getränke" class="product-image">
-              <div class="card-overlay">
-                <p class="card-description">Hausgemachte Limonaden & Smoothies</p>
-                <button class="card-button desktop-button">Zur Auswahl</button>
-              </div>
-            </div>
-          </div>
-          <button class="card-button mobile-button">Mehr Entdecken</button> <!-- Button innerhalb des product-pair -->
-        </div>
+  <div class="product-carousel-container">
+    <h2>Unsere Produktkategorien</h2>
+    <div class="carousel">
+      <!-- Drei Karten übereinander -->
+      <div class="category position-0" style="background-image: url('https://picsum.photos/600/800?random=1');">
+        <div class="card-overlay"><p>Kurzer Satz zur Kategorie 1.</p></div>
+        <button class="card-button">Mehr erfahren</button>
       </div>
-  
-      <button class="slider-arrow next">→</button>
-    </div>
-    <div class="slider-dots">
-      <div class="dot active"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-  </section>
-
-  <section id="angebot" class="section angebot-section">
-    <h2>Angebot</h2>
-    <div class="angebot-container">
-
-      <div class="angebot-content">
-        <h2> Waffeln</h2>
-        <p>Unser neuestes Special - nur Donnerstag-Samstag erhältlich!</p>
-        <a href="zielseite.html" class="angebot-button">Mehr Angebote</a>
+      <div class="category position-1" style="background-image: url('https://picsum.photos/600/800?random=2');">
+        <div class="card-overlay"><p>Kurzer Satz zur Kategorie 2.</p></div>
+        <button class="card-button">Mehr erfahren</button>
       </div>
-
-      <div class="angebot-image">
-        <img src="offer.png" alt="Angebot Bild">
+      <div class="category position-2" style="background-image: url('https://picsum.photos/600/800?random=3');">
+        <div class="card-overlay"><p>Kurzer Satz zur Kategorie 3.</p></div>
+        <button class="card-button">Mehr erfahren</button>
       </div>
+      <!-- Navigationspfeile zuletzt einfügen -->
+      <button class="nav-btn nav-prev" aria-label="Vorherige Karte">❮</button>
+      <button class="nav-btn nav-next" aria-label="Nächste Karte">❯</button>
     </div>
-  </section>
+  </div>
 
   <section id="location" class="section">
     <h2>Komm uns besuchen</h2>
@@ -309,39 +226,9 @@ location:
     </div>
   </section>
 
-  <!-- Services 
-  <section id="services" class="section">
-    <h2>Reparaturservice</h2>
-    <p>PC- und Handy-Reparaturen. Hochwertiger Service von Experten.</p>
-    <a href="#contact" class="cta-button">Reparatur buchen</a>
-  </section> 
-  -->
-
-  <!-- Über uns 
-  <section id="about" class="section">
-    <h2>Über uns</h2>
-    <p>Samtech Systems steht für professionelle Computerlösungen und Reparaturen.</p>
-  </section>
-  -->
-
-  <!-- Kontakt 
-  <section id="contact" class="section contact-section">
-    <h2>Kontakt</h2>
-    <form>
-      <input type="text" placeholder="Ihr Name" required>
-      <input type="email" placeholder="Ihre E-Mail" required>
-      <textarea placeholder="Ihre Nachricht"></textarea>
-      <button type="submit" class="cta-button">Absenden</button>
-    </form>
-  </section> -->
   
-  <!-- Footer -->
-  <footer>
-    <p>Studentenfutter Giessen © 2024</p>
-  </footer>
-
   <script>
-    window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function() {
       const scrollPosition = window.scrollY;
       const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercentage = (scrollPosition / documentHeight) * 100;
@@ -381,83 +268,8 @@ if(window.innerWidth > 768) {
   });
 }
 
-  
-const slider = document.querySelector('.product-slider');
-const pairs = document.querySelectorAll('.product-pair');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let currentIndex = 0;
-
-function updateSlider() {
-  pairs.forEach((pair, index) => {
-    pair.classList.remove('active');
-    if (index === currentIndex) {
-      pair.classList.add('active');
-    }
-  });
-  
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-  
-  // Aktualisiere die Dots
-  const dots = document.querySelectorAll('.dot');
-  dots.forEach((dot, index) => {
-    dot.classList.remove('active');
-    if (index === currentIndex) {
-      dot.classList.add('active');
-    }
-  });
-}
-
-// Optional: Klick-Event für die Dots
-document.querySelectorAll('.dot').forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    currentIndex = index;
-    updateSlider();
-  });
-});
-
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + pairs.length) % pairs.length;
-  updateSlider();
-});
-
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % pairs.length;
-  updateSlider();
-});
-let touchStartX = 0;
-let touchEndX = 0;
-
-// Touch Events für den Slider
-document.querySelector('.product-slider').addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.querySelector('.product-slider').addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    const swipeThreshold = 50; // Minimale Swipe-Distanz
-    const difference = touchStartX - touchEndX;
-
-    if (Math.abs(difference) < swipeThreshold) return;
-
-    if (difference > 0) {
-        // Nach links swipen -> nächste Karte
-        document.querySelector('.next').click();
-    } else {
-        // Nach rechts swipen -> vorherige Karte
-        document.querySelector('.prev').click();
-    }
-}
-
-// Initialisierung
-updateSlider();
-
-  // Auswahl der Elemente
-  const hamburger = document.querySelector('.hamburger');
+ // Auswahl der Elemente
+ const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.querySelector('.mobile-nav');
   const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
   const backBtns = document.querySelectorAll('.back-btn');
@@ -488,18 +300,26 @@ updateSlider();
     });
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
-  const angebotContainer = document.querySelector('.angebot-container');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        angebotContainer.classList.add('active');
-        observer.unobserve(entry.target);
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = Array.from(document.querySelectorAll('.category'));
+      let idx = 0;
+      function update() {
+        cards.forEach((card, i) => {
+          const pos = (i - idx + cards.length) % cards.length;
+          card.classList.remove('position-0', 'position-1', 'position-2');
+          card.classList.add(`position-${pos}`);
+        });
       }
+      document.querySelector('.nav-prev').addEventListener('click', () => {
+        idx = (idx - 1 + cards.length) % cards.length;
+        update();
+      });
+      document.querySelector('.nav-next').addEventListener('click', () => {
+        idx = (idx + 1) % cards.length;
+        update();
+      });
+      update();
     });
-  }, { threshold: 0.5 });
-  observer.observe(angebotContainer);
-});
   </script>
 </body>
 </html>
