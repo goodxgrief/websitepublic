@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -209,10 +211,11 @@
       <div class="opening-hours">
         <h3>Öffnungszeiten</h3>
         <ul>
-          {% for slot in page.opening_hours %}
-            <li><strong>{{ slot.days }}:</strong> {{ slot.hours }}</li>
-          {% endfor %}
-        </ul>
+          <ul>
+            {% for slot in site.data.site_data.opening_hours %}
+              <li><strong>{{ slot.days }}:</strong> {{ slot.hours }}</li>
+            {% endfor %}
+          </ul>
         <p class="address">
           <strong>Adresse:</strong><br>
           Studentenfutter Gießen<br>
