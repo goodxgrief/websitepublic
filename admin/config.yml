@@ -12,7 +12,6 @@ collections:
       - file: "index.html"
         label: "Startseite"
         name: "startseite"
-        frontmatter_delimiters: ["<!--", "-->"]
         fields:                            # ← hier ergänzen
           - label: "Öffnungszeiten"
             name: "opening_hours"
