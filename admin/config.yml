@@ -6,13 +6,13 @@ media_folder: "."       # Pfad relativ zum Repo-Root → speichert Uploads im Ro
 public_folder: "/"      # URL-Pfad im gebauten Site → /<dateiname>
 
 collections:
-  - name: "pages"
-    label: "Seiten"
+  - name: "site_data"
+    label: "Site Data"
     files:
-      - file: "index.html"
-        label: "Startseite"
-        name: "startseite"
-        fields:                            # ← hier ergänzen
+      - file: "_data/site_data.yml"
+        name: "site_data"
+        label: "Website-Daten"
+        fields:
           - label: "Öffnungszeiten"
             name: "opening_hours"
             widget: "list"
