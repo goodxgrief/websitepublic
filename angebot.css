@@ -63,15 +63,17 @@
   .offer-heading {
     font-size: 1.25rem;
     margin: 0;
-    color: #333;
+    color: #a72953;
     font-weight: 600;
   }
 
   .description {
     font-size: 1rem;
     line-height: 1.5;
-    color: #333;
+    color: #ffffff;
     margin: 0;
+    font-weight: bold;
+    text-align: center;
   }
 
   .action-btn {

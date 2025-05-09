@@ -133,6 +133,7 @@
         display: none;
     }
 
+
     @media (max-width: 768px) {
         .product-carousel-container {
           --card-width: 200px;
