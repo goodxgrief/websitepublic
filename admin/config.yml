@@ -12,72 +12,11 @@ collections:
       - file: "index.html"
         label: "Startseite"
         name: "startseite"
-        fields:
-          - label: "Logo"
-            name: "logo"
-            widget: "image"
-            hint: "Bild für das Logo (logo.png)"
-            required: false
-          - label: "Navigation Links"
-            name: "nav_links"
+        frontmatter_delimiters: ["<!--", "-->"]
+        fields:                            # ← hier ergänzen
+          - label: "Öffnungszeiten"
+            name: "opening_hours"
             widget: "list"
-            required: false
             fields:
-              - { label: "Link-Text", name: "text", widget: "string", required: false }
-              - { label: "Link-URL", name: "url", widget: "string", required: false }
-              - label: "Submenu"
-                name: "submenu"
-                widget: "list"
-                required: false
-                fields:
-                  - { label: "Sub-Link Text", name: "sub_text", widget: "string", required: false }
-                  - { label: "Sub-Link URL", name: "sub_url", widget: "string", required: false }
-          - label: "Hero Text"
-            name: "hero_text"
-            widget: "string"
-            default: "mit veganen und glutenfreien Optionen!"
-            required: false
-          - label: "Hero Bild"
-            name: "hero_image"
-            widget: "image"
-            hint: "Bild für die Desktop Hero Section"
-            required: false
-          - label: "Mobile Hero Bild"
-            name: "mobile_hero_image"
-            widget: "image"
-            hint: "Bild für die Mobile Hero Section"
-            required: false
-          - label: "Produktkarten"
-            name: "product_cards"
-            widget: "list"
-            required: false
-            fields:
-              - { label: "Titel", name: "title", widget: "string", required: false }
-              - { label: "Bild", name: "image", widget: "image", required: false }
-              - { label: "Beschreibung", name: "description", widget: "text", required: false }
-              - { label: "Button Text", name: "button_text", widget: "string", required: false }
-              - { label: "Button URL", name: "button_url", widget: "string", required: false }
-          - label: "Angebot"
-            name: "angebot"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Titel", name: "title", widget: "string", required: false }
-              - { label: "Beschreibung", name: "description", widget: "text", required: false }
-              - { label: "Button Text", name: "button_text", widget: "string", required: false }
-              - { label: "Button URL", name: "button_url", widget: "string", required: false }
-              - { label: "Bild", name: "image", widget: "image", required: false }
-          - label: "Standort & Öffnungszeiten"
-            name: "location"
-            widget: "object"
-            required: false
-            fields:
-              - label: "Öffnungszeiten"
-                name: "opening_hours"
-                widget: "list"
-                required: false
-                fields:
-                  - { label: "Tag", name: "day", widget: "string", required: false }
-                  - { label: "Zeiten", name: "hours", widget: "string", required: false }
-              - { label: "Adresse", name: "address", widget: "text", required: false }
-              - { label: "Google Map Embed URL", name: "map_url", widget: "string", required: false }
+              - { label: "Tage", name: "days", widget: "string" }
+              - { label: "Uhrzeiten", name: "hours", widget: "string" }

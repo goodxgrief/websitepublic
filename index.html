@@ -1,3 +1,11 @@
+<!--
+opening_hours:
+  - days: "Montag - Samstag"
+    hours: "10:00 - 19:00"
+  - days: "Sonntag"
+    hours: "Geschlossen"
+-->
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -170,15 +178,15 @@
     <h3 id="carousel-heading">Frische Bowls</h3>
     <div class="carousel">
       <!-- Drei Karten übereinander -->
-      <div class="category position-0" style="background-image: url('produktbilder/bowl1.jpg');">
+      <div class="category position-0" style="background-image: url('media/produktbilder/bowl1.jpg');">
         <div class="card-overlay"><p>Frische Bowls</p></div>
-        <button class="card-button" data-href="#zielseite.html">Mehr erfahren</button>
+        <button class="card-button" data-href="zielseite.html">Mehr erfahren</button>
       </div>
-      <div class="category position-1" style="background-image: url('produktbilder/snacks.jpg');">
+      <div class="category position-1" style="background-image: url('media/produktbilder/snacks.jpg');">
         <div class="card-overlay"><p>ausgewogene Snacks</p></div>
         <button class="card-button" data-href="#zielseite.html">Mehr erfahren</button>
       </div>
-      <div class="category position-2" style="background-image: url('produktbilder/drinks.jpg');">
+      <div class="category position-2" style="background-image: url('media/produktbilder/drinks.jpg');">
         <div class="card-overlay"><p>Hausgemachte Drinks</p></div>
         <button class="card-button" data-href="#zielseite.html">Mehr erfahren</button>
       </div>
@@ -209,8 +217,9 @@
       <div class="opening-hours">
         <h3>Öffnungszeiten</h3>
         <ul>
-          <li><strong>Montag - Samstag:</strong> 10:00 - 19:00</li>
-          <li><strong>Sonntag:</strong> Geschlossen</li>
+          {% for slot in page.opening_hours %}
+            <li><strong>{{ slot.days }}:</strong> {{ slot.hours }}</li>
+          {% endfor %}
         </ul>
         <p class="address">
           <strong>Adresse:</strong><br>
