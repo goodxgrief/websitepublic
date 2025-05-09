@@ -121,6 +121,10 @@ body {
     box-shadow: 
     0 0 20px rgba(0, 0, 0, 0.3),
     0 0 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+  justify-content: center; /* Horizontal zentrieren */
+  align-items: center;     /* Vertikal zentrieren */
+  position: relative;
   }
   
   .hero-text {
@@ -271,6 +275,29 @@ body {
     background: #d9d8dc;
     color: #777;
   }
+.hero-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Deckt den gesamten Bereich ab */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Zentriert den Text vertikal */
+  align-items: center; /* Zentriert den Text horizontal */
+  z-index: 2;
+  text-align: center;
+}
+  
+    .cta-text {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+      display: inline-block;
+      margin-top: 40%;
+    }
+
 
   /* Media Queries für verschiedene Bildschirmgrößen */
 @media screen and (max-width: 768px) {
@@ -320,6 +347,7 @@ body {
       border-radius: 8px;
       color: white;
       display: inline-block;
+      margin-top: 60%;
     }
   
     /* Desktop-Navigation ausblenden */
