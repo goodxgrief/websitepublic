@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Carousel from './components/Carousel';
-
+import OrderSection from './components/OrderSection';
 // CSS imports
 import './assets/styles/carousel.css'
 import './assets/styles/map.css'
 import './assets/styles/style.css'
 import './assets/styles/angebot.css'
 import './assets/styles/instagram.css'
+import './assets/styles/OrderSection.css'
 
 // Asset imports
 import logo from './assets/media/logo.png'
@@ -312,6 +313,14 @@ const handleTouchEnd = () => {
           </div>
         </div>
       </section>
+    
+    {/*Order Section*/}
+    <section className="order-section">
+      <div>
+        {/* Dein restliches Layout */}
+        <OrderSection lieferandoSlug="studentenfutter" uberEatsSlug="studentenfutter" />
+      </div>
+    </section>
 
       {/* Instagram Section */}
       <section className="instagram-section">
