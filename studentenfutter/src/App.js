@@ -33,8 +33,8 @@ const App = () => {
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
   const cardData = [
-    { title: 'Frische Bowls', img: bowl1, href: 'zielseite.html' },
     { title: 'ausgewogene Snacks', img: snacks, href: '#zielseite.html' },
+    { title: 'Frische Bowls', img: bowl1, href: 'zielseite.html' },
     { title: 'Hausgemachte Drinks', img: drinks, href: '#zielseite.html' }
   ];
 

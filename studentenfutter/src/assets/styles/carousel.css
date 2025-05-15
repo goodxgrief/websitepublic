@@ -136,8 +136,8 @@
 
   @media (min-width: 1600px) {
   .product-carousel-container {
-    --card-width: 600px;  /* hier kannst du den gewünschten Wert anpassen */
-    --card-height: 700px; /* hier ebenfalls */
+    --card-width: 500px;  /* hier kannst du den gewünschten Wert anpassen */
+    --card-height: 600px; /* hier ebenfalls */
   }
 }
 
