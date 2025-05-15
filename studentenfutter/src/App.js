@@ -19,6 +19,7 @@ import bowl1 from './assets/media/produktbilder/bowl1.jpg'
 import snacks from './assets/media/produktbilder/snacks.jpg'
 import drinks from './assets/media/produktbilder/drinks.jpg'
 import offerImg from './assets/media/offer.png'
+import smoothieImg from './assets/media/offer.png'
 
 
 // Data import (JSON file with opening_hours key)
@@ -61,7 +62,7 @@ const handleTouchEnd = () => {
   setTouchEndX(0);
 };
 
-
+/*
   // Scroll-based navbar hide/show
   useEffect(() => {
     let lastScrollPos = 0;
@@ -80,7 +81,7 @@ const handleTouchEnd = () => {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
+*/
   // Carousel controls
   const prevCard = () => setCarouselIdx((carouselIdx - 1 + cardData.length) % cardData.length);
   const nextCard = () => setCarouselIdx((carouselIdx + 1) % cardData.length);
@@ -245,6 +246,7 @@ const handleTouchEnd = () => {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}>
         <h2>Unsere Produkte</h2>
+        <p className="intro-paragraph">Entdecken Sie ihre neuen Lieblingsgerichte. Eine große Auswahl an leckeren und gesunden Gerichten.</p>
         <h3 id="carousel-heading">{cardData[carouselIdx].title}</h3>
         <div className="carousel">
           {cardData.map((card, i) => {
@@ -268,23 +270,37 @@ const handleTouchEnd = () => {
       </div>
 
       {/* Angebot Section */}
-      <section className="angebot-section">
-        <h2 className="section-title">Neu im Angebot</h2>
-        <div className="card">
-          <div className="content">
-            <h3 className="offer-heading">Hausgemachte Waffeln!</h3>
-            <p className="description">Hier steht die Beschreibung Ihres Angebots. Verwöhnen Sie Ihre Gäste mit unserem leckeren Special!</p>
-            <button className="action-btn">Mehr erfahren</button>
-          </div>
-          <div className="image-wrapper">
-            <img src={offerImg} alt="Leckeres Gericht" />
-          </div>
-        </div>
-      </section>
+<section class="angebot-section">
+    <header className="section-header">
+    <h2>Aktuell im Angebot</h2>
+    <p>Unsere neuesten Kreationen aktuell im Angebot. Mit Kreativität und Liebe zubereitet.</p>
+  </header>
+    <div class="card">
+      <div class="content">
+        <h3 class="offer-heading">Hausgemachte Waffeln!</h3>
+        <p class="description">Hier steht die Beschreibung Ihres Angebots. Verwöhnen Sie Ihre Gäste mit unserem leckeren Special!</p>
+        <button class="action-btn">Mehr erfahren</button>
+      </div>
+      <div class="image-wrapper">
+        <img src={offerImg} alt="Hausgemachte Waffeln" />
+      </div>
+    </div>
+    <div class="card purple">
+      <div class="content">
+        <h3 class="offer-heading">Frische Smoothies!</h3>
+        <p class="description">Genieße unsere erfrischenden Smoothies aus frischen Früchten und Beeren.</p>
+        <button class="action-btn">Entdecken</button>
+      </div>
+      <div class="image-wrapper">
+        <img src={offerImg} alt="Frische Smoothies" />
+      </div>
+    </div>
+  </section>
 
       {/* Location Section */}
       <section id="location" className="section">
-        <h2>Komm uns besuchen</h2>
+        <h2>Kommen Sie uns besuchen</h2>
+        <p>Neben dem guten Essen bieten wir auch eine heimische Atmosphäre an. Kommen Sie vorbei, um es selbst zu erleben.</p>
         <div className="location-container">
           <div className="opening-hours">
             <h3>Öffnungszeiten</h3>

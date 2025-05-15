@@ -1,147 +1,129 @@
- :root {
-    --card-bg: #ffbebd;
-    --btn-bg: #a72953;
-    --btn-text: #ffffff;
-    --border-radius: 16px;
-    --shadow: rgba(0, 0, 0, 0.06) 0px 10px 20px;
-    --font:Roboto;
-  }
-
-  .angebot-section {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    background: transparent;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .section-title {
-    text-align: center;
-    font-family: var(--font);
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-
-  .card {
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    width: 100%;
-    max-width: 700px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-  }
-
-  /* Desktop: Text left, Image right */
-  @media (min-width: 600px) {
-    .card {
-      flex-direction: row;
+:root {
+      --card1-start: #ffbebd;
+      --card1-end: #ffe4e1;
+      --card2-start: #d1c4e9;
+      --card2-end: #ede7f6;
+      --btn1-bg: #a72953;
+      --btn2-bg: #7e57c2;
+      --btn-text: #ffffff;
+      --border-radius: 16px;
+      --shadow: rgba(0, 0, 0, 0.06) 0px 10px 20px;
+      --font: Roboto, sans-serif;
     }
-    .content, .image-wrapper {
-      flex: 1;
-    }
-  }
 
-  .content {
-    padding: 1.5rem;
-    font-family: var(--font);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .offer-heading {
-    font-size: 1.25rem;
-    margin: 0;
-    color: #a72953;
-    font-weight: 600;
-  }
-
-  .description {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #ffffff;
-    margin: 0;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .action-btn {
-    background-color: var(--btn-bg);
-    color: var(--btn-text);
-    border: none;
-    border-radius: var(--border-radius);
-    padding: 0.75rem 1.5rem;
-    font-family: var(--font);
-    font-size: 1rem;
-    cursor: pointer;
-    align-self: center;
-    transition: opacity 0.2s ease;
-  }
-
-  .action-btn:hover {
-    opacity: 0.85;
-  }
-
-  .image-wrapper {
-    position: relative;
-    overflow: hidden;
-    /* Round only the image side corners to match card */
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  }
-
-  .image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.4s ease;
-    display: block;
-  }
-
-  .card:hover .image-wrapper img {
-    transform: scale(1.05);
-  }
-
-  .section-title {
-  text-align: center;
-  font-family: var(--font);
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  color: #a72953; /* Hier die gewünschte Farbe eintragen */
-}
-
-  /* Mobile Anpassungen */
-  @media (max-width: 599px) {
     .angebot-section {
-      padding: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
-    .card {
-      flex-direction: column;
-    }
-    .content {
-      padding: 1rem;
-    }
-    .action-btn {
+
+    .angebot-section .section-header {
+      flex-basis: 100%;
       width: 100%;
       text-align: center;
+      margin-bottom: 1px; /* Abstand zwischen Header und den Karten */
     }
-    .image-wrapper {
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+    .card {
+      background: linear-gradient(to bottom, var(--card1-start) 0%, var(--card1-end) 95%);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
       width: 100%;
-      height: auto;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    .card.purple {
+      background: linear-gradient(to bottom, var(--card2-start) 0%, var(--card2-end) 95%);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Desktop: Text links, Bild rechts */
+    @media (min-width: 600px) {
+      .card {
+        flex-direction: row;
+      }
+      .content {
+        width: 50%;
+      }
+      .image-wrapper {
+        width: 50%;
+      }
+    }
+
+    .content {
+      padding: 1.5rem;
+      font-family: var(--font);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .offer-heading {
+      font-size: 2rem;
+      margin: 0;
+      font-weight: 600;
+      color: var(--btn1-bg);
+    }
+    .card.purple .offer-heading {
+      color: var(--btn2-bg);
+    }
+
+    .description {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #333;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .action-btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--border-radius);
+      font-family: var(--font);
+      font-size: 1rem;
+      cursor: pointer;
+      color: var(--btn-text);
+      background-color: var(--btn1-bg);
+      align-self: center;
+      transition: opacity 0.2s ease;
+      margin-top: 1rem;
+    }
+    .card.purple .action-btn {
+      background-color: var(--btn2-bg);
+    }
+    .action-btn:hover {
+      opacity: 0.85;
+    }
+
+    .image-wrapper {
+      overflow: hidden;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
     }
     .image-wrapper img {
+      width: 100%;
       height: auto;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.4s ease;
     }
-  }
+    .card:hover .image-wrapper img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 599px) {
+      .image-wrapper {
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+      }
+    }

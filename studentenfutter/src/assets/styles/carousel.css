@@ -108,8 +108,6 @@
       font-family: var(--font-family);
     }
     .card-overlay p {
-      font-size: 0.9rem;
-      color: rgb(31, 29, 29);
       font-weight: bold;
     }
     .card-button {
@@ -132,7 +130,16 @@
     #carousel-heading {
         display: none;
     }
+.intro-paragraph {
+  padding-bottom: 2rem; /* Passe den Wert nach Bedarf an */
+}
 
+  @media (min-width: 1600px) {
+  .product-carousel-container {
+    --card-width: 600px;  /* hier kannst du den gewünschten Wert anpassen */
+    --card-height: 700px; /* hier ebenfalls */
+  }
+}
 
     @media (max-width: 768px) {
         .product-carousel-container {
