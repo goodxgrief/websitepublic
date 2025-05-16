@@ -43,9 +43,7 @@ export default function Carousel({ items }) {
             className={`category position-${pos}`}
             style={{ backgroundImage: `url(${item.image})` }}
           >
-            <div className="card-overlay">
-              <p>{item.title}</p>
-            </div>
+
             <button
               className="card-button"
               onClick={() => window.location.href = item.link}

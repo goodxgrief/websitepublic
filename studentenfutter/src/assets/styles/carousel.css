@@ -96,16 +96,7 @@
     .nav-next { right: 10px; }
 
     .card-overlay {
-      position: absolute;
-      bottom: calc(var(--gap) + 3rem);
-      left: var(--gap);
-      right: var(--gap);
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(10px);
-      border-radius: var(--card-radius);
-      padding: 0.5rem 1rem;
-      text-align: center;
-      font-family: var(--font-family);
+display: none;
     }
     .card-overlay p {
       font-weight: bold;
@@ -128,7 +119,12 @@
     .card-button:hover { background-color: #456848; }
 
     #carousel-heading {
-        display: none;
+        display: block;
+        font-size: 2rem;
+        background-image: linear-gradient(to bottom, #6b996f, #557a58);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
     }
 .intro-paragraph {
   padding-bottom: 2rem; /* Passe den Wert nach Bedarf an */
@@ -153,7 +149,6 @@
       #carousel-heading {
         display: block;
         color: #6b996f;
-        padding-bottom: 20px;
     }
 
     .nav-btn {

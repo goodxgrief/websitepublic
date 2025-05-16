@@ -247,7 +247,9 @@ const handleTouchEnd = () => {
             onTouchEnd={handleTouchEnd}>
         <h2>Unsere Produkte</h2>
         <p className="intro-paragraph">Entdecken Sie ihre neuen Lieblingsgerichte. Eine große Auswahl an leckeren und gesunden Gerichten.</p>
-        <h3 id="carousel-heading">{cardData[carouselIdx].title}</h3>
+        <h2 id="carousel-heading">
+          {cardData[(carouselIdx + 1) % cardData.length].title}
+        </h2>
         <div className="carousel">
           {cardData.map((card, i) => {
             const pos = (i - carouselIdx + cardData.length) % cardData.length;
