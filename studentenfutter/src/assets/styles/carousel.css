@@ -120,12 +120,13 @@ display: none;
 
     #carousel-heading {
         display: block;
-        font-size: 1.5rem;
+        font-size: 2rem;
         background-image: linear-gradient(to bottom, #6b996f, #557a58);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
         margin-bottom: 10px;
+        font-weight: 600;
     }
 .intro-paragraph {
   padding-bottom: 2rem; /* Passe den Wert nach Bedarf an */
