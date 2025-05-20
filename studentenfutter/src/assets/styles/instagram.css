@@ -39,3 +39,181 @@
   .instagram-container .instagram-media {
     width: 100% !important;
   }
+
+  /* Container für das flexible Layout */
+.instagram-flex-container {
+  display: block; /* Standard: untereinander */
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .instagram-flex-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 0 2rem;
+  }
+
+  .instagram-container {
+    flex-shrink: 0; /* Verhindert das Zusammenstauchen */
+    margin: 0; /* Entfernt auto margins */
+  }
+
+  .instagram-gallery {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* mehr Abstand zwischen den Karten */
+    height: 100%; /* volle Höhe des Containers */
+    justify-content: space-around; /* gleichmäßige Verteilung */
+  }
+
+  .instagram-gallery figure {
+    flex: 1; /* jede Karte nimmt gleich viel Platz ein */
+    height: calc(50% - 1rem); /* Hälfte der Höhe minus gap */
+    display: flex;
+    align-items: center;
+    background: #f5f5f7;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Mittleres Element: Text links, Bild rechts */
+  .instagram-gallery figure:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+
+  /* Anpassung des Abstands für das mittlere Element */
+  .instagram-gallery figure:nth-child(2) figcaption {
+    margin-right: 2.5rem;
+    margin-left: 0;
+  }
+
+  .instagram-gallery figure img {
+    width: 300px;          /* schmaler */
+    height: 400px;         /* höher für Hochformat */
+    max-width: 100%;       /* bleibt responsiv */
+    object-fit: cover;     /* behält Bildverhältnis bei */
+    border-radius: 12px;
+    flex-shrink: 1;
+  }
+
+  /* Anpassung des Textes neben den größeren Bildern */
+  .instagram-gallery figure figcaption {
+    margin-left: 2.5rem;
+    font-size: 1.25rem;
+    flex: 1;
+    line-height: 1.6;
+    color: #1d1d1f;
+    position: relative;
+    padding-left: 1.5rem;
+    font-style: italic;
+  }
+
+  /* Zitat-Strich hinzufügen */
+  .instagram-gallery figure figcaption::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(
+      to bottom,
+      #f58529,
+      #dd2a7b,
+      #8134af
+    );
+    border-radius: 2px;
+  }
+}
+
+/* Zusätzliche Media Query für sehr große Bildschirme */
+@media (min-width: 1200px) {
+  .instagram-gallery figure img {
+    width: 360px;          /* etwas breiter auf großen Screens */
+    height: 480px;         /* proportional höher */
+  }
+}
+
+/* Animation Grundzustand */
+.instagram-gallery figure {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animierter Zustand wenn .visible Klasse hinzugefügt wird */
+.instagram-gallery figure.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Verzögerung für aufeinanderfolgende Elemente */
+.instagram-gallery figure:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.instagram-gallery figure:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.instagram-gallery figure:nth-child(3) {
+  transition-delay: 0s;
+}
+
+/* Mobile Layout Overrides für Instagram Gallery (unter 768px) */
+@media (max-width: 767px) {
+  .instagram-gallery figure {
+    display: flex;
+    flex-direction: column;  /* Text über dem Bild */
+    align-items: center;
+    background: #f5f5f7;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .instagram-gallery figure figcaption {
+    order: -1;              /* Caption kommt vor dem Bild */
+    margin-bottom: 1rem;     /* Abstand zwischen Text und Bild */
+    margin-left: 0;
+    width: 100%;             /* Volle Breite innerhalb der Karte */
+    text-align: left;        /* Links ausgerichtet */
+    padding-left: 1.5rem;     /* Platz für den Zitat-Strich */
+    
+    /* Formatierung wie Desktop */
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #1d1d1f;
+    position: relative;
+    font-style: italic;
+  }
+  
+  .instagram-gallery figure figcaption::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(
+      to bottom,
+      #f58529,
+      #dd2a7b,
+      #8134af
+    );
+    border-radius: 2px;
+  }
+  
+  .instagram-gallery figure img {
+    margin: 0 auto;         /* Bild zentrieren */
+    width: 100%;
+    max-width: 300px;       /* Maximale Breite, um den Container nicht zu sprengen */
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+

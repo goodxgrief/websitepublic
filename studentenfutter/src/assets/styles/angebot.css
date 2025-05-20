@@ -127,3 +127,10 @@
         border-radius: 0 0 var(--border-radius) var(--border-radius);
       }
     }
+
+    @media (min-width: 768px) {
+    .angebot-section .card {
+        /* Berechnet 50% der Breite abzüglich eines Gap (hier 2rem) */
+        width: calc(50% - 2rem);
+    }
+}

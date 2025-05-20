@@ -20,10 +20,15 @@ import snacks from './assets/media/produktbilder/snacks.jpg'
 import drinks from './assets/media/produktbilder/drinks.jpg'
 import offerImg from './assets/media/offer.png'
 import smoothieImg from './assets/media/offer.png'
+import image1 from './assets/media/image1.jpg';
+import image2 from './assets/media/image2.jpg';
+import image3 from './assets/media/image3.jpg';
 
 
 // Data import (JSON file with opening_hours key)
 import siteData from './data/site_data.json';
+
+
 
 const App = () => {
   const [blurred, setBlurred] = useState(false);
@@ -85,6 +90,29 @@ const handleTouchEnd = () => {
   // Carousel controls
   const prevCard = () => setCarouselIdx((carouselIdx - 1 + cardData.length) % cardData.length);
   const nextCard = () => setCarouselIdx((carouselIdx + 1) % cardData.length);
+
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.1 // Element wird sichtbar wenn 10% im Viewport sind
+    }
+  );
+
+  // Alle figure Elemente beobachten
+  document.querySelectorAll('.instagram-gallery figure').forEach((figure) => {
+    observer.observe(figure);
+  });
+
+  // Cleanup
+  return () => observer.disconnect();
+}, []);
 
   return (
     <div className="App">
@@ -247,9 +275,7 @@ const handleTouchEnd = () => {
             onTouchEnd={handleTouchEnd}>
         <h2>Unsere Produkte</h2>
         <p className="intro-paragraph">Entdecken Sie ihre neuen Lieblingsgerichte. Eine große Auswahl an leckeren und gesunden Gerichten.</p>
-        <h2 id="carousel-heading">
-          {cardData[(carouselIdx + 1) % cardData.length].title}
-        </h2>
+        <h3 id="carousel-heading">{cardData[carouselIdx].title}</h3>
         <div className="carousel">
           {cardData.map((card, i) => {
             const pos = (i - carouselIdx + cardData.length) % cardData.length;
@@ -342,21 +368,34 @@ const handleTouchEnd = () => {
 
       {/* Instagram Section */}
       <section className="instagram-section">
-        <h2>Folg uns, um Up-to-Date zu bleiben!</h2>
-        <div className="instagram-container">
-          <blockquote
-            className="instagram-media"
-            data-instgrm-captioned
-            data-instgrm-permalink="https://www.instagram.com/p/DAtWDg1N6I1/?utm_source=ig_embed&amp;utm_campaign=loading"
-            data-instgrm-version="14"
-            style={{ background: '#FFF', border: 0 }}
-          ></blockquote>
-        </div>
-      </section>
+  <h2>Folg uns, um Up-to-Date zu bleiben!</h2>
+  <div className="instagram-flex-container">
+    <div className="instagram-container">
+      <blockquote
+        className="instagram-media"
+        data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/p/DAtWDg1N6I1/?utm_source=ig_embed&amp;utm_campaign=loading"
+        data-instgrm-version="14"
+        style={{ background: '#FFF', border: 0 }}
+      ></blockquote>
+    </div>
+    <div className="instagram-gallery">
+      <figure>
+        <img src={image1} alt="Beschreibung 1" />
+        <figcaption>Frisch zubereitete Bowl mit saisonalen Zutaten</figcaption>
+      </figure>
+      <figure>
+        <img src={image2} alt="Beschreibung 2" />
+        <figcaption>Hausgemachte Smoothies in verschiedenen Variationen</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
       <Helmet>
         <script async src="//www.instagram.com/embed.js"></script>
       </Helmet>
+      
     </div>
   );
 };
