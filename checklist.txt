@@ -1,9 +1,0 @@
-index seite:
-aushänge angebot mit bild und button zu allen angeboten
-insta feed einbetten
-lieferando/uber eats einbetten
-smartphone kompabilität
-
-andere seiten:
-hauptsächlich bilder mit animierten Texten? 
-CMS System implementieren zum Anpassen der Inhalte
