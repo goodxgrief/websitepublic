@@ -9,8 +9,9 @@ collections:
   - name: "site_data"
     label: "Site Data"
     files:
-      - file: "_data/site_data.yml"
+      - file: "src/data/site_data.json"
         name: "site_data"
+        format: json
         label: "Website-Daten"
         fields:
           - label: "Öffnungszeiten"
