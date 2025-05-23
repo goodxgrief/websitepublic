@@ -1,4 +1,3 @@
-<!-- filepath: c:\Users\goodxgrief\Documents\GitHub\websitepublic\admin\index.html -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Content Manager</title>
+    <!-- Manuelle Initialisierung aktivieren -->
+    <script>window.CMS_MANUAL_INIT = true;</script>
+    <!-- Config laden -->
+    <script src="config.yml"></script>
+    <!-- Netlify Identity (falls du Git Gateway nutzt) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', user => {
-          if (!user) {
-            window.netlifyIdentity.open('signup');
-          }
-        });
-      }
-    </script>
-
-    <!-- Include the script that builds the page and powers Decap CMS -->
+    <!-- CMS selbst -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- CMS initialisieren -->
+    <script>
+      CMS.init();
+    </script>
   </body>
 </html>
