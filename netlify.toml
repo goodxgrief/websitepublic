@@ -1,0 +1,4 @@
+[build]
+  base    = "studentenfutter"
+  command = "npm install --prefix studentenfutter && npm run build --prefix studentenfutter"
+  publish = "studentenfutter/build"
