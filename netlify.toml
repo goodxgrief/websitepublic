@@ -1,4 +1,7 @@
 [build]
   base    = "studentenfutter"
-  command = "npm install --prefix studentenfutter && npm run build --prefix studentenfutter"
-  publish = "studentenfutter/build"
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  CI = "false"
