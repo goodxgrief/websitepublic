@@ -56,7 +56,9 @@
 
   .instagram-container {
     flex-shrink: 0; /* Verhindert das Zusammenstauchen */
-    margin: 0; /* Entfernt auto margins */
+    margin: 0 auto; /* Entfernt auto margins */
+    max-width: 400px; 
+    width: 100%;/* Maximale Breite auf 100% setzen */
   }
 
   .instagram-gallery {

@@ -133,6 +133,12 @@ display: none;
   padding-bottom: 2rem; /* Passe den Wert nach Bedarf an */
   text-align: center;
 }
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .product-carousel-container {
+    --card-width: 300px;
+    --card-height: 400px;
+  }
+}
 
   @media (min-width: 1600px) {
   .product-carousel-container {
