@@ -391,7 +391,7 @@ const handleTouchEnd = () => {
     <img src={image2} alt="Beschreibung 2" />
     <div className="text-content">
       <figcaption>Hausgemachte Smoothies in verschiedenen Variationen</figcaption>
-      <p className="description-instagram">erfrischende Smoothies aus frischen Früchten und Superfoods. Der perfekte Energieboost für zwischendurch.</p>
+      <p className="description-instagram">Erfrischende Smoothies aus frischen Früchten und Superfoods. Der perfekte Energieboost für zwischendurch.</p>
     </div>
   </figure>
 </div>
