@@ -1,0 +1,388 @@
+---
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studentenfutter Gießen</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="angebot.css">
+  <link rel="stylesheet" href="instagram.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+  <div class="blur-overlay"></div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="Studentenfutter Logo">
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation (bestehende Struktur, die unverändert bleibt) -->
+      <ul class="nav-links desktop-nav">
+        <li>
+          <a href="#products">Gerichte</a>
+          <ul class="dropdown">
+            <li><a href="gaming-pcs.html">Bowls</a></li>
+            <li><a href="#business-pcs">Snacks</a></li>
+            <li><a href="#accessories">Getränke</a></li>
+            <li><a href="#accessories">Speisekarte</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#services">Angebote</a>
+          <ul class="dropdown">
+            <li><a href="#pc-repair">Tagesgerichte</a></li>
+            <li><a href="#phone-repair">Saisonales</a></li>
+            <li><a href="#consulting">Angebote</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#about">Über uns</a>
+          <ul class="dropdown">
+            <li><a href="#our-story">Unsere Geschichte</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#values">Werte</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#contact">Kontakt</a>
+          <ul class="dropdown">
+            <li><a href="#location">Standort</a></li>
+            <li><a href="#contact-form">Kontaktformular</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <!-- Mobile Navigation -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="mobile-nav">
+        <!-- Hauptmenü, mobile Version -->
+        <ul class="mobile-nav-links">
+          <li>
+            <a href="#" class="mobile-nav-item" data-submenu="gerichte">Gerichte</a>
+          </li>
+          <li>
+            <a href="#" class="mobile-nav-item" data-submenu="angebote">Angebote</a>
+          </li>
+          <li>
+            <a href="#" class="mobile-nav-item" data-submenu="about">Über uns</a>
+          </li>
+          <li>
+            <a href="#" class="mobile-nav-item" data-submenu="kontakt">Kontakt</a>
+          </li>
+        </ul>
+
+        <!-- Submenu "Gerichte" (bereits vorhanden) -->
+        <div class="mobile-submenu" id="gerichte">
+          <div class="submenu-header">
+            <button class="back-btn">←</button>
+            <span>Gerichte</span>
+          </div>
+          <ul>
+            <li><a href="gaming-pcs.html">Bowls</a></li>
+            <li><a href="#business-pcs">Snacks</a></li>
+            <li><a href="#accessories">Getränke</a></li>
+            <li><a href="#accessories">Speisekarte</a></li>
+          </ul>
+        </div>
+
+        <!-- Submenu "Angebote" -->
+        <div class="mobile-submenu" id="angebote">
+          <div class="submenu-header">
+            <button class="back-btn">←</button>
+            <span>Angebote</span>
+          </div>
+          <ul>
+            <li><a href="#pc-repair">Tagesgerichte</a></li>
+            <li><a href="#phone-repair">Saisonales</a></li>
+            <li><a href="#consulting">Angebote</a></li>
+          </ul>
+        </div>
+
+        <!-- Submenu "Über uns" -->
+        <div class="mobile-submenu" id="about">
+          <div class="submenu-header">
+            <button class="back-btn">←</button>
+            <span>Über uns</span>
+          </div>
+          <ul>
+            <li><a href="#our-story">Unsere Geschichte</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#values">Werte</a></li>
+          </ul>
+        </div>
+
+        <!-- Submenu "Kontakt" -->
+        <div class="mobile-submenu" id="kontakt">
+          <div class="submenu-header">
+            <button class="back-btn">←</button>
+            <span>Kontakt</span>
+          </div>
+          <ul>
+            <li><a href="#location">Standort</a></li>
+            <li><a href="#contact-form">Kontaktformular</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      
+    </nav>
+  </header>
+  
+  <section class="hero-section desktop-hero">
+    <div class="hero-background">
+      <video class="video-left" autoplay muted loop playsinline>
+        <source src="left.mp4" type="video/mp4">
+      </video>
+      <div class="hero-image">
+        <span class="cta-text">"mit veganen und glutenfreien Optionen!"</span>
+      </div>
+      <video class="video-right" autoplay muted loop playsinline>
+        <source src="right.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- Mobile Hero Section -->
+  <section class="hero-section mobile-hero">
+    <div class="mobile-hero-image">
+      <img src="mobile-hero.png" alt="Studentenfutter Mobile Hero">
+    </div>
+    <div class="hero-text">
+      <span class="cta-text">"mit veganen und glutenfreien Optionen!"</span>
+    </div>
+  </section>
+
+  <div class="product-carousel-container">
+    <h2>Unsere Produkte</h2>
+    <h3 id="carousel-heading">Frische Bowls</h3>
+    <div class="carousel">
+      <!-- Drei Karten übereinander -->
+      <div class="category position-0" style="background-image: url('media/produktbilder/bowl1.jpg');">
+        <div class="card-overlay"><p>Frische Bowls</p></div>
+        <button class="card-button" data-href="zielseite.html">Mehr erfahren</button>
+      </div>
+      <div class="category position-1" style="background-image: url('media/produktbilder/snacks.jpg');">
+        <div class="card-overlay"><p>ausgewogene Snacks</p></div>
+        <button class="card-button" data-href="#zielseite.html">Mehr erfahren</button>
+      </div>
+      <div class="category position-2" style="background-image: url('media/produktbilder/drinks.jpg');">
+        <div class="card-overlay"><p>Hausgemachte Drinks</p></div>
+        <button class="card-button" data-href="#zielseite.html">Mehr erfahren</button>
+      </div>
+      <!-- Navigationspfeile zuletzt einfügen -->
+      <button class="nav-btn nav-prev" aria-label="Vorherige Karte">❮</button>
+      <button class="nav-btn nav-next" aria-label="Nächste Karte">❯</button>
+    </div>
+  </div>
+
+  <!-- Angebot Section for Restaurant Website -->
+<section class="angebot-section">
+  <h2 class="section-title">Neu im Angebot</h2>
+  <div class="card">
+    <div class="content">
+      <h3 class="offer-heading">Hausgemachte Waffeln!</h3>
+      <p class="description">Hier steht die Beschreibung Ihres Angebots. Verwöhnen Sie Ihre Gäste mit unserem leckeren Special!</p>
+      <button class="action-btn">Mehr erfahren</button>
+    </div>
+    <div class="image-wrapper">
+      <img src="offer.png" alt="Leckeres Gericht" />
+    </div>
+  </div>
+</section>
+
+  <section id="location" class="section">
+    <h2>Komm uns besuchen</h2>
+    <div class="location-container">
+      <div class="opening-hours">
+        <h3>Öffnungszeiten</h3>
+        <ul>
+          <ul>
+            {% for slot in site.data.site_data.opening_hours %}
+              <li><strong>{{ slot.days }}:</strong> {{ slot.hours }}</li>
+            {% endfor %}
+          </ul>
+        <p class="address">
+          <strong>Adresse:</strong><br>
+          Studentenfutter Gießen<br>
+          Kreuzpl. 2<br>
+          35390 Gießen
+        </p>
+      </div>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.744037612495!2d8.672531777105644!3d50.58546366657675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc592913647307%3A0x7249afbd06dbc046!2sStudentenfutter%20Gie%C3%9Fen!5e0!3m2!1sde!2sde!4v1681766424048!5m2!1sde!2sde" 
+          width="600" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+<section class="instagram-section">
+  <h2>Folg uns, um Up-to-Date zu bleiben!</h2>
+  <div class="instagram-container">
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DAtWDg1N6I1/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DAtWDg1N6I1/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Sieh dir diesen Beitrag auf Instagram an</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DAtWDg1N6I1/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Ein Beitrag geteilt von Studentenfutter Gießen (@studentenfutter_gi)</a></p></div></blockquote>
+    <script async src="//www.instagram.com/embed.js"></script>
+  </div>
+</section>
+
+  
+  <script>
+        window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercentage = (scrollPosition / documentHeight) * 100;
+      document.querySelector('.scroll-line').style.width = scrollPercentage + '%';
+    });
+
+let lastScrollPosition = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  const currentScrollPosition = window.pageYOffset;
+if(window.innerWidth > 768) {
+  if (currentScrollPosition > lastScrollPosition) {
+    // Wenn der Benutzer nach unten scrollt, verstecke die Navbar langsam
+    navbar.classList.add('hidden');
+  } else {
+    // Wenn der Benutzer nach oben scrollt, zeige die Navbar langsam an
+    navbar.classList.remove('hidden');
+  }
+
+  lastScrollPosition = currentScrollPosition;
+}
+});
+
+
+  const navLinks = document.querySelector('.nav-links');
+  const blurOverlay = document.querySelector('.blur-overlay');
+  if(window.innerWidth > 768) {
+  navLinks.addEventListener('mouseenter', () => {
+    blurOverlay.style.opacity = '1';
+    blurOverlay.style.pointerEvents = 'auto';
+  });
+
+  navLinks.addEventListener('mouseleave', () => {
+    blurOverlay.style.opacity = '0';
+    blurOverlay.style.pointerEvents = 'none';
+  });
+}
+
+ // Auswahl der Elemente
+ const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+  const backBtns = document.querySelectorAll('.back-btn');
+  
+  // Hamburger-Button schaltet das Mobile-Menü ein/aus
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+  });
+  
+  // Klick auf einen Hauptmenü-Link öffnet das zugehörige Submenu
+  mobileNavItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = item.getAttribute('data-submenu');
+      const submenu = document.getElementById(target);
+      if(submenu) {
+        submenu.classList.add('active');
+      }
+    });
+  });
+  
+  // "Zurück"-Button schließt das Submenu, sodass wieder das Hauptmenü zu sehen ist
+  backBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const submenu = btn.closest('.mobile-submenu');
+      submenu.classList.remove('active');
+    });
+  });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = Array.from(document.querySelectorAll('.category'));
+  const heading = document.getElementById('carousel-heading');
+
+  // Titel-Array, Reihenfolge entspricht den Positionen der Karten
+  const titles = [
+    'Ausgewogene Snacks',
+    'Hausgemachte Drinks',
+    'Frische Bowls'
+  ];
+
+  let idx = 0;
+
+  function update() {
+    cards.forEach((card, i) => {
+      const pos = (i - idx + cards.length) % cards.length;
+      card.classList.remove('position-0', 'position-1', 'position-2');
+      card.classList.add(`position-${pos}`);
+    });
+    heading.textContent = titles[idx];
+  }
+
+  // Pfeil-Buttons
+  document.querySelector('.nav-prev').addEventListener('click', () => {
+    idx = (idx - 1 + cards.length) % cards.length;
+    update();
+  });
+  document.querySelector('.nav-next').addEventListener('click', () => {
+    idx = (idx + 1) % cards.length;
+    update();
+  });
+
+  // Swipe-Funktion für Smartphone (max. 768px)
+  if (window.innerWidth <= 768) {
+    const carousel = document.querySelector('.carousel');
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50; // Mindestdistanz in Pixeln
+
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      if (touchStartX - touchEndX > swipeThreshold) {
+        // Swipe nach links: nächste Karte
+        idx = (idx + 1) % cards.length;
+        update();
+      } else if (touchEndX - touchStartX > swipeThreshold) {
+        // Swipe nach rechts: vorherige Karte
+        idx = (idx - 1 + cards.length) % cards.length;
+        update();
+      }
+    }
+  }
+
+  update();
+});
+  </script>
+</body>
+</html>
