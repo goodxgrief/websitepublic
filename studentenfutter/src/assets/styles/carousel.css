@@ -15,6 +15,7 @@
     }
     .product-carousel-container h2 {
         padding-bottom: 20px;
+        text-align: center;
         /* weitere Stile hier */
     }
     /* Container nur für die Produkt-Karussell-Sektion */
@@ -130,6 +131,7 @@ display: none;
     }
 .intro-paragraph {
   padding-bottom: 2rem; /* Passe den Wert nach Bedarf an */
+  text-align: center;
 }
 
   @media (min-width: 1600px) {
@@ -151,6 +153,7 @@ display: none;
       #carousel-heading {
         display: block;
         color: #6b996f;
+        text-align: center;
     }
 
     .nav-btn {

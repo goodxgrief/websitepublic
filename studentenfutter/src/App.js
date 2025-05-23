@@ -379,16 +379,22 @@ const handleTouchEnd = () => {
         style={{ background: '#FFF', border: 0 }}
       ></blockquote>
     </div>
-    <div className="instagram-gallery">
-      <figure>
-        <img src={image1} alt="Beschreibung 1" />
-        <figcaption>Frisch zubereitete Bowl mit saisonalen Zutaten</figcaption>
-      </figure>
-      <figure>
-        <img src={image2} alt="Beschreibung 2" />
-        <figcaption>Hausgemachte Smoothies in verschiedenen Variationen</figcaption>
-      </figure>
+<div className="instagram-gallery">
+  <figure>
+    <img src={image1} alt="Beschreibung 1" />
+    <div className="text-content">
+      <figcaption>Frisch zubereitete Bowl mit saisonalen Zutaten</figcaption>
+      <p className="description-instagram">Unsere Bowl-Kreationen werden täglich frisch mit regionalen und saisonalen Zutaten zubereitet. Eine perfekte Kombination aus Geschmack und Ausgewogenheit.</p>
     </div>
+  </figure>
+  <figure>
+    <img src={image2} alt="Beschreibung 2" />
+    <div className="text-content">
+      <figcaption>Hausgemachte Smoothies in verschiedenen Variationen</figcaption>
+      <p className="description-instagram">Erfrischende Smoothies aus frischen Früchten und Superfoods. Der perfekte Energieboost für zwischendurch.</p>
+    </div>
+  </figure>
+</div>
   </div>
 </section>
 
