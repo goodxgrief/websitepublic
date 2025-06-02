@@ -325,7 +325,7 @@ const handleTouchEnd = () => {
     </div>
   </section>
 
-      {/* Location Section */}
+      {/* Location section */}
       <section id="location" className="section">
         <h2>Kommen Sie uns besuchen</h2>
         <p>Neben dem guten Essen bieten wir auch eine heimische Atmosphäre an. Kommen Sie vorbei, um es selbst zu erleben.</p>
