@@ -25,10 +25,6 @@ import image2 from './assets/media/image2.jpg';
 import image3 from './assets/media/image3.jpg';
 
 
-// Data import (JSON file with opening_hours key)
-import siteData from './data/site_data.json';
-
-
 
 const App = () => {
   const [blurred, setBlurred] = useState(false);
@@ -37,6 +33,8 @@ const App = () => {
   const [carouselIdx, setCarouselIdx] = useState(0);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
+  const [siteData, setSiteData] = useState({ opening_hours: [] });
+
   const cardData = [
     { title: 'ausgewogene Snacks', img: snacks, href: '#zielseite.html' },
     { title: 'Frische Bowls', img: bowl1, href: 'zielseite.html' },
@@ -113,6 +111,14 @@ const handleTouchEnd = () => {
   // Cleanup
   return () => observer.disconnect();
 }, []);
+
+useEffect(() => {
+    // Achte darauf, dass die site_data.json im public-Verzeichnis liegt oder über die URL erreichbar ist.
+    fetch('/data/site_data.json')
+      .then(response => response.json())
+      .then(data => setSiteData(data))
+      .catch(error => console.error('Fehler beim Laden der Daten:', error));
+  }, []);
 
   return (
     <div className="App">
