@@ -9,7 +9,7 @@ collections:
   - name: "site_data"
     label: "Site Data"
     files:
-      - file: "public/data/site_data.json"
+      - file: "studentenfutter/public/data/site_data.json"
         name: "site_data"
         format: "json"
         label: "Website-Daten"
