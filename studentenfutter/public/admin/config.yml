@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "."       # Pfad relativ zum Repo-Root → speichert Uploads im Root-Verzeichnis  
-public_folder: "/"      # URL-Pfad im gebauten Site → /<dateiname>
+media_folder: "src/assets/media"  
+public_folder: "/media"      
 
 collections:
   - name: "site_data"
@@ -11,12 +11,13 @@ collections:
     files:
       - file: "src/data/site_data.json"
         name: "site_data"
-        format: json
+        format: "json"
         label: "Website-Daten"
         fields:
           - label: "Öffnungszeiten"
             name: "opening_hours"
             widget: "list"
+            allow_add: true
             fields:
               - { label: "Tage", name: "days", widget: "string" }
               - { label: "Uhrzeiten", name: "hours", widget: "string" }
