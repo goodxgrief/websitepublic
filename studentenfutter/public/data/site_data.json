@@ -1,7 +1,16 @@
 {
   "opening_hours": [
-    { "days": "Montag–Freitag", "hours": "9:00–19:00" },
-    { "days": "Samstag",       "hours": "10:00–14:00" },
-    { "days": "Sonntag",       "hours": "geschlossen" }
+    {
+      "days": "Montag–Freitag",
+      "hours": "9:00–18:30"
+    },
+    {
+      "days": "Samstag",
+      "hours": "10:00–14:00"
+    },
+    {
+      "days": "Sonntag",
+      "hours": "geschlossen"
+    }
   ]
 }
