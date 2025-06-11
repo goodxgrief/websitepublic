@@ -5,6 +5,8 @@ import Carousel from './components/Carousel';
 import OrderSection from './components/OrderSection';
 import BowlsPage from './pages/BowlsPage';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 
 // CSS imports
 import './assets/styles/carousel.css'
@@ -198,6 +200,7 @@ const HomePageContent = ({
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
