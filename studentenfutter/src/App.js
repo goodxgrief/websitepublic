@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Carousel from './components/Carousel';
 import OrderSection from './components/OrderSection';
-import Speisen from './components/bowl'; // Importiere die neue Speisen-Seite
-
 // CSS imports
 import './assets/styles/carousel.css'
 import './assets/styles/map.css'
@@ -124,14 +121,24 @@ useEffect(() => {
   }, []);
 
   return (
-    <Router>
-      <div className={`app ${blurred ? 'blurred' : ''}`}>
-        <Helmet>
-          <title>Studentenfutter - Gesunde Bowls & Snacks</title>
-          <meta name="description" content="Frische, ausgewogene Bowls und Snacks für Studenten und alle, die gesund und lecker essen möchten." />
-        </Helmet>
-        
-        {/* Navbar hier */}
+    <div className="App">
+      <Helmet>
+        <title>Studentenfutter Gießen</title>
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+      </Helmet>
+
+      <div
+        className="blur-overlay"
+        style={{
+          opacity: blurred ? 1 : 0,
+          pointerEvents: blurred ? 'auto' : 'none'
+        }}
+      />
+      <header>
         <nav className="navbar">
           <div className="logo">
             <a href="/">
@@ -242,63 +249,61 @@ useEffect(() => {
             </div>
           </div>
         </nav>
-        
-        <Routes>
-          <Route path="/" element={
-            <>
-              {/* Hero Sections */}
-              <section className="hero-section desktop-hero">
-                <div className="hero-background">
-                  <video className="video-left" autoPlay muted loop playsInline>
-                    <source src={leftVideo} type="video/mp4" />
-                  </video>
-                  <div className="hero-image">
-                    <span className="cta-text">"mit veganen und glutenfreien Optionen!"</span>
-                  </div>
-                  <video className="video-right" autoPlay muted loop playsInline>
-                    <source src={rightVideo} type="video/mp4" />
-                  </video>
-                </div>
-              </section>
-              <section className="hero-section mobile-hero">
-                <div className="mobile-hero-image">
-                  <img src={mobileHero} alt="Studentenfutter Mobile Hero" />
-                </div>
-                <div className="hero-text">
-                  <span className="cta-text">"mit veganen und glutenfreien Optionen!"</span>
-                </div>
-              </section>
+      </header>
 
-              {/* Product Carousel */}
-              <div className="product-carousel-container"
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                    onTouchEnd={handleTouchEnd}>
-                <h2>Unsere Produkte</h2>
-                <p className="intro-paragraph">Entdecken Sie ihre neuen Lieblingsgerichte. Eine große Auswahl an leckeren und gesunden Gerichten.</p>
-                <h3 id="carousel-heading">{cardData[carouselIdx].title}</h3>
-                <div className="carousel">
-                  {cardData.map((card, i) => {
-                    const pos = (i - carouselIdx + cardData.length) % cardData.length;
-                    return (
-                      <div
-                        key={i}
-                        className={`category position-${pos}`}
-                        style={{ backgroundImage: `url(${card.img})` }}
-                      >
-                        <div className="card-overlay"><p>{card.title}</p></div>
-                        <button className="card-button" onClick={() => window.location.href = card.href}>
-                          Mehr erfahren
-                        </button>
-                      </div>
-                    );
-                  })}
-                  <button className="nav-btn nav-prev" aria-label="Vorherige Karte" onClick={prevCard}>❮</button>
-                  <button className="nav-btn nav-next" aria-label="Nächste Karte" onClick={nextCard}>❯</button>
-                </div>
+      {/* Hero Sections */}
+      <section className="hero-section desktop-hero">
+        <div className="hero-background">
+          <video className="video-left" autoPlay muted loop playsInline>
+            <source src={leftVideo} type="video/mp4" />
+          </video>
+          <div className="hero-image">
+            <span className="cta-text">"mit veganen und glutenfreien Optionen!"</span>
+          </div>
+          <video className="video-right" autoPlay muted loop playsInline>
+            <source src={rightVideo} type="video/mp4" />
+          </video>
+        </div>
+      </section>
+      <section className="hero-section mobile-hero">
+        <div className="mobile-hero-image">
+          <img src={mobileHero} alt="Studentenfutter Mobile Hero" />
+        </div>
+        <div className="hero-text">
+          <span className="cta-text">"mit veganen und glutenfreien Optionen!"</span>
+        </div>
+      </section>
+
+      {/* Product Carousel */}
+      <div className="product-carousel-container"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}>
+        <h2>Unsere Produkte</h2>
+        <p className="intro-paragraph">Entdecken Sie ihre neuen Lieblingsgerichte. Eine große Auswahl an leckeren und gesunden Gerichten.</p>
+        <h3 id="carousel-heading">{cardData[carouselIdx].title}</h3>
+        <div className="carousel">
+          {cardData.map((card, i) => {
+            const pos = (i - carouselIdx + cardData.length) % cardData.length;
+            return (
+              <div
+                key={i}
+                className={`category position-${pos}`}
+                style={{ backgroundImage: `url(${card.img})` }}
+              >
+                <div className="card-overlay"><p>{card.title}</p></div>
+                <button className="card-button" onClick={() => window.location.href = card.href}>
+                  Mehr erfahren
+                </button>
               </div>
+            );
+          })}
+          <button className="nav-btn nav-prev" aria-label="Vorherige Karte" onClick={prevCard}>❮</button>
+          <button className="nav-btn nav-next" aria-label="Nächste Karte" onClick={nextCard}>❯</button>
+        </div>
+      </div>
 
-              {/* Angebot Section */}
+      {/* Angebot Section */}
 <section class="angebot-section">
     <header className="section-header">
     <h2>Aktuell im Angebot</h2>
@@ -326,90 +331,84 @@ useEffect(() => {
     </div>
   </section>
 
-              {/* Location Section */}
-              <section id="location" className="section">
-                <h2>Kommen Sie uns besuchen</h2>
-                <p>Neben dem guten Essen bieten wir auch eine heimische Atmosphäre an. Kommen Sie vorbei, um es selbst zu erleben.</p>
-                <div className="location-container">
-                  <div className="opening-hours">
-                    <h3>Öffnungszeiten</h3>
-                    <ul>
-                      {siteData.opening_hours.map((slot, idx) => (
-                        <li key={idx}><strong>{slot.days}:</strong> {slot.hours}</li>
-                      ))}
-                    </ul>
-                    <p className="address">
-                      <strong>Adresse:</strong><br />
-                      Studentenfutter Gießen<br />
-                      Kreuzpl. 2<br />
-                      35390 Gießen
-                    </p>
-                  </div>
-                  <div className="map-container">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.744037612495!2d8.672531777105644!3d50.58546366657675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc592913647307%3A0x7249afbd06dbc046!2sStudentenfutter%20Gie%C3%9Fen!5e0!3m2!1sde!2sde!4v1681766424048!5m2!1sde!2sde"
-                      width="600"
-                      height="450"
-                      style={{ border: 0 }}
-                      allowFullScreen=""
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                  </div>
-                </div>
-              </section>
-            
-            {/*Order Section*/}
-            <section className="order-section">
-              <div>
-                {/* Dein restliches Layout */}
-                <OrderSection lieferandoSlug="studentenfutter" uberEatsSlug="studentenfutter" />
-              </div>
-            </section>
-
-              {/* Instagram Section */}
-              <section className="instagram-section">
-          <h2>Folg uns, um Up-to-Date zu bleiben!</h2>
-          <div className="instagram-flex-container">
-            <div className="instagram-container">
-              <blockquote
-                className="instagram-media"
-                data-instgrm-captioned
-                data-instgrm-permalink="https://www.instagram.com/p/DAtWDg1N6I1/?utm_source=ig_embed&amp;utm_campaign=loading"
-                data-instgrm-version="14"
-                style={{ background: '#FFF', border: 0 }}
-              ></blockquote>
-            </div>
-  <div className="instagram-gallery">
-    <figure>
-      <img src={image1} alt="Beschreibung 1" />
-      <div className="text-content">
-        <figcaption>Frisch zubereitete Bowl mit saisonalen Zutaten</figcaption>
-        <p className="description-instagram">Unsere Bowl-Kreationen werden täglich frisch mit regionalen und saisonalen Zutaten zubereitet. Eine perfekte Kombination aus Geschmack und Ausgewogenheit.</p>
-      </div>
-    </figure>
-    <figure>
-      <img src={image2} alt="Beschreibung 2" />
-      <div className="text-content">
-        <figcaption>Hausgemachte Smoothies in verschiedenen Variationen</figcaption>
-        <p className="description-instagram">Erfrischende Smoothies aus frischen Früchten und Superfoods. Der perfekte Energieboost für zwischendurch.</p>
-      </div>
-    </figure>
-  </div>
+      {/* Location Section */}
+      <section id="location" className="section">
+        <h2>Kommen Sie uns besuchen</h2>
+        <p>Neben dem guten Essen bieten wir auch eine heimische Atmosphäre an. Kommen Sie vorbei, um es selbst zu erleben.</p>
+        <div className="location-container">
+          <div className="opening-hours">
+            <h3>Öffnungszeiten</h3>
+            <ul>
+              {siteData.opening_hours.map((slot, idx) => (
+                <li key={idx}><strong>{slot.days}:</strong> {slot.hours}</li>
+              ))}
+            </ul>
+            <p className="address">
+              <strong>Adresse:</strong><br />
+              Studentenfutter Gießen<br />
+              Kreuzpl. 2<br />
+              35390 Gießen
+            </p>
           </div>
-        </section>
-
-              <Helmet>
-                <script async src="//www.instagram.com/embed.js"></script>
-              </Helmet>
-            </>
-          } />
-          <Route path="/speisen" element={<Speisen />} />
-        </Routes>
-        
-        {/* Footer hier */}
+          <div className="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.744037612495!2d8.672531777105644!3d50.58546366657675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc592913647307%3A0x7249afbd06dbc046!2sStudentenfutter%20Gie%C3%9Fen!5e0!3m2!1sde!2sde!4v1681766424048!5m2!1sde!2sde"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    
+    {/*Order Section*/}
+    <section className="order-section">
+      <div>
+        {/* Dein restliches Layout */}
+        <OrderSection lieferandoSlug="studentenfutter" uberEatsSlug="studentenfutter" />
       </div>
-    </Router>
+    </section>
+
+      {/* Instagram Section */}
+      <section className="instagram-section">
+  <h2>Folg uns, um Up-to-Date zu bleiben!</h2>
+  <div className="instagram-flex-container">
+    <div className="instagram-container">
+      <blockquote
+        className="instagram-media"
+        data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/p/DAtWDg1N6I1/?utm_source=ig_embed&amp;utm_campaign=loading"
+        data-instgrm-version="14"
+        style={{ background: '#FFF', border: 0 }}
+      ></blockquote>
+    </div>
+<div className="instagram-gallery">
+  <figure>
+    <img src={image1} alt="Beschreibung 1" />
+    <div className="text-content">
+      <figcaption>Frisch zubereitete Bowl mit saisonalen Zutaten</figcaption>
+      <p className="description-instagram">Unsere Bowl-Kreationen werden täglich frisch mit regionalen und saisonalen Zutaten zubereitet. Eine perfekte Kombination aus Geschmack und Ausgewogenheit.</p>
+    </div>
+  </figure>
+  <figure>
+    <img src={image2} alt="Beschreibung 2" />
+    <div className="text-content">
+      <figcaption>Hausgemachte Smoothies in verschiedenen Variationen</figcaption>
+      <p className="description-instagram">Erfrischende Smoothies aus frischen Früchten und Superfoods. Der perfekte Energieboost für zwischendurch.</p>
+    </div>
+  </figure>
+</div>
+  </div>
+</section>
+
+      <Helmet>
+        <script async src="//www.instagram.com/embed.js"></script>
+      </Helmet>
+      
+    </div>
   );
 };
 

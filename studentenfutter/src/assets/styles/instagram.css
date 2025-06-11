@@ -45,7 +45,6 @@
   display: block; /* Standard: untereinander */
 }
 
-
 /* Desktop Layout */
 @media (min-width: 768px) {
   .instagram-flex-container {
@@ -253,8 +252,3 @@
   }
 }
 
-@media (min-width: 1920px) {
-  .instagram-container {
-    max-width: 600px; /* Beispielwert – anpassen wie gewünscht */
-  }
-}
