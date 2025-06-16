@@ -37,6 +37,35 @@ const HomePageContent = ({
   cardData, handleTouchStart, handleTouchMove, handleTouchEnd, prevCard, nextCard,
   setBlurred, setIsMobileNavActive, setActiveSubmenu
 }) => {
+  useEffect(() => {
+    // Instagram Embed neu laden
+    if (window.instgrm) {
+      window.instgrm.Embeds.process();
+    }
+
+    // Observer für Animationen auf der Startseite
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    // Elemente auf der Startseite beobachten
+    document.querySelectorAll('.instagram-gallery figure, .angebot-section .card').forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Observer bei Verlassen der Komponente aufräumen
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Navbar
@@ -111,7 +140,9 @@ const HomePageContent = ({
             <div className="content">
               <h3 className="offer-heading">Hausgemachte Waffeln!</h3>
               <p className="description">Hier steht die Beschreibung Ihres Angebots. Verwöhnen Sie Ihre Gäste mit unserem leckeren Special!</p>
-              <button className="action-btn">Mehr erfahren</button>
+              <button className="action-btn" onClick={() => window.location.href = '/angebote'}>
+                Mehr erfahren
+              </button>
             </div>
             <div className="image-wrapper">
               <img src={offerImg} alt="Hausgemachte Waffeln" />
@@ -262,7 +293,8 @@ const App = () => {
       }
     );
 
-    document.querySelectorAll('.instagram-gallery figure, .bowl-card, .angebot-section .card').forEach((el) => { // .bowl-card und .angebot-section .card hinzugefügt
+    // Beobachtet jetzt nur noch Elemente, die nicht in HomePageContent sind (z.B. auf der Speisekarte)
+    document.querySelectorAll('.bowl-card').forEach((el) => { 
       observer.observe(el);
     });
 
