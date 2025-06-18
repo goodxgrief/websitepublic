@@ -1,0 +1,170 @@
+.angebote-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 0 40px;      /* links/rechts-Padding entfernt */
+    gap: 2rem;
+}
+
+/* Überschrift bleibt mittig */
+.angebote-page-container .section-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.angebote-page-container .section-header h1 {
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
+}
+.angebote-page-container .section-header p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Liste der Angebote – entfernt Grid/Flex, jede Karte ein Block */
+.angebote-list {
+  width: 100vw;               /* volle Viewport-Breite */
+  max-width: 100vw;
+  display: block;
+}
+
+/* Jede Karte füllt die Breite, ist eckig */
+.angebote-list .card {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;                  /* kein Abstand außen */
+  border-radius: 0;           /* eckige Ecken */
+  box-shadow: none;           /* falls gewünscht Schatten entfernen */
+}
+
+/* Inhalt in der Karte bleibt innen gepolstert */
+.angebote-list .card .content,
+.angebote-list .card .image-wrapper {
+  padding: 1.5rem;
+}
+
+/* Bild passt sich an */
+.angebote-list .card .image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Die .card Stile werden von angebote.css geerbt. */
+/* Wir überschreiben hier nur die Schriftstärke der Beschreibung. */
+.card .description {
+    font-weight: normal; /* Auf der Startseite ist es 'bold' */
+    margin-bottom: 1rem;
+}
+
+/* Die alten Preis-Stile werden nicht mehr benötigt */
+/*
+.card .offer-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: auto; 
+    padding-top: 1rem;
+}
+
+.card.purple .offer-price {
+    color: var(--btn2-bg);
+}
+
+.card:not(.purple) .offer-price {
+    color: var(--btn1-bg);
+}
+*/
+
+/* Die Karte wird zu einem eckigen Kasten über die volle Breite */
+.angebote-page-container .card {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 0; /* Ecken werden eckig */
+    padding: 2rem 0;  /* Vertikaler Abstand für den Inhalt */
+}
+
+/* Neuer Wrapper, um den Inhalt innerhalb der Karte zu zentrieren */
+.card-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px; /* Begrenzt die Breite des Inhalts */
+    width: 90%;       /* Sorgt für seitlichen Abstand auf kleinen Screens */
+    margin: 0 auto;   /* Zentriert den Inhaltsblock horizontal */
+}
+
+/* Stellt sicher, dass Bild und Text auf kleinen Bildschirmen untereinander stehen */
+@media (max-width: 768px) {
+    .card-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Styling für die neue Aufzählung */
+.offer-details {
+    list-style-position: inside;
+    padding-left: 0;
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.offer-details li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.detail-price {
+    font-weight: bold;
+    white-space: nowrap; /* Verhindert Umbruch des Preises */
+}
+
+/* Farbliche Anpassung der neuen Preise */
+.card.purple .detail-price {
+    color: var(--btn2-bg);
+}
+
+.card:not(.purple) .detail-price {
+    color: var(--btn1-bg);
+}
+
+/* Die alten Grid-Layouts und Breitenbeschränkungen werden nicht mehr benötigt und können entfernt werden. */
+/*
+.angebote-page-container .card {
+    max-width: 800px;
+    width: 100%;
+    margin: 0;
+}
+
+.angebote-list {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .angebote-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+.angebote-list .card {
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+}
+*/
+    .content_angebote {
+      padding: 1.5rem;
+      font-family: var(--font);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      text-align: left;
+      flex: 1; /* Diese Zeile hinzufügen, um den Platz gleichmäßig aufzuteilen */
+    }

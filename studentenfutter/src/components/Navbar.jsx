@@ -65,11 +65,12 @@ const Navbar = ({
               <a href="#services">Angebote</a>
               <ul className="dropdown">
                 {/* Anker-Links auf derselben Seite benötigen dies nicht unbedingt, aber es schadet nicht */}
-                <li><a href="#pc-repair" onClick={() => setBlurred(false)}>Tagesgerichte</a></li>
+                <li><Link to="/angebote" onClick={handleNavigation}>Angebote</Link></li>
                 <li><a href="#phone-repair" onClick={() => setBlurred(false)}>Saisonales</a></li>
                 <li><a href="#consulting" onClick={() => setBlurred(false)}>Angebote</a></li>
               </ul>
             </li>
+            {/*}
             <li>
               <a href="#about">Über uns</a>
               <ul className="dropdown">
@@ -78,6 +79,7 @@ const Navbar = ({
                 <li><a href="#values" onClick={() => setBlurred(false)}>Werte</a></li>
               </ul>
             </li>
+            */}
             <li>
               <a href="#contact">Kontakt</a>
               <ul className="dropdown">

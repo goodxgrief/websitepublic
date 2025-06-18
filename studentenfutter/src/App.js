@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Carousel from './components/Carousel';
 import OrderSection from './components/OrderSection';
 import BowlsPage from './pages/BowlsPage';
+import AngebotePage from './pages/AngebotePage'; // Importieren
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -140,9 +141,9 @@ const HomePageContent = ({
             <div className="content">
               <h3 className="offer-heading">Hausgemachte Waffeln!</h3>
               <p className="description">Hier steht die Beschreibung Ihres Angebots. Verwöhnen Sie Ihre Gäste mit unserem leckeren Special!</p>
-              <button className="action-btn" onClick={() => window.location.href = '/angebote'}>
+              <Link to="/angebote#waffeln" className="action-btn">
                 Mehr erfahren
-              </button>
+              </Link>
             </div>
             <div className="image-wrapper">
               <img src={offerImg} alt="Hausgemachte Waffeln" />
@@ -152,7 +153,7 @@ const HomePageContent = ({
             <div className="content">
               <h3 className="offer-heading">Frische Smoothies!</h3>
               <p className="description">Genieße unsere erfrischenden Smoothies aus frischen Früchten und Beeren.</p>
-              <button className="action-btn">Entdecken</button>
+              <Link to="/angebote#smoothies" className="action-btn">Entdecken</Link>
             </div>
             <div className="image-wrapper">
               <img src={offerImg} alt="Frische Smoothies" /> {/* smoothieImg war identisch, daher offerImg beibehalten */}
@@ -348,6 +349,16 @@ const App = () => {
             />
           } />
           <Route path="/speisekarte" element={<BowlsPage />} /> {/* Route für deine BowlsPage */}
+          <Route path="/angebote" element={
+            <AngebotePage
+              blurred={blurred}
+              setBlurred={setBlurred}
+              isMobileNavActive={isMobileNavActive}
+              setIsMobileNavActive={setIsMobileNavActive}
+              activeSubmenu={activeSubmenu}
+              setActiveSubmenu={setActiveSubmenu}
+            />
+          } />
           {/* Hier könnten weitere Routen für andere separate Seiten stehen */}
         </Routes>
       </div>
