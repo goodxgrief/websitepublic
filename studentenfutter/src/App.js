@@ -35,7 +35,10 @@ import image2 from './assets/media/image2.jpg';
 import image3 from './assets/media/image3.jpg';
 import KontaktPage from './pages/KontaktPage';
 
-// Komponente für den Inhalt der Startseite (alles außer der BowlsPage)
+// Komponente für den Inhalt der Startseite
+// WICHTIG: Diese Komponente wurde aus der 'App'-Komponente herausgezogen.
+// Das verhindert, dass sie bei jeder Zustandsänderung in 'App' neu erstellt wird,
+// was zum Verlust des Zustands in untergeordneten Komponenten (wie dem 'openDropdown' in Navbar) führte.
 const HomePageContent = ({
   blurred, isMobileNavActive, activeSubmenu, carouselIdx, touchStartX, touchEndX, siteData,
   cardData, handleTouchStart, handleTouchMove, handleTouchEnd, prevCard, nextCard,
@@ -253,6 +256,8 @@ const App = () => {
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
   const [siteData, setSiteData] = useState({ opening_hours: [] });
+
+  // Die Definition von HomePageContent wurde von hier nach oben verschoben.
 
   // Die href-Werte hier sind für das Carousel.
   // Wenn Klicks im Carousel auch zur /speisekarte führen sollen, passe sie an.

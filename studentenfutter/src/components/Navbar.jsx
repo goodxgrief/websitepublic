@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // useState importieren
 import { Link } from 'react-router-dom';
 // Stelle sicher, dass der Pfad zum Logo korrekt ist, von Navbar.jsx aus gesehen
 import logo from '../assets/media/logo.png';
@@ -11,8 +11,21 @@ const Navbar = ({
   activeSubmenu,
   setActiveSubmenu
 }) => {
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const handleMouseEnter = (menu) => {
+    setOpenDropdown(menu);
+    setBlurred(true);
+  };
+
+  const handleMouseLeave = () => {
+    setOpenDropdown(null);
+    setBlurred(false);
+  };
+
   const handleNavigation = () => {
     setBlurred(false); // Blur-Effekt deaktivieren bei jeder Navigation
+    setOpenDropdown(null); // Desktop-Dropdown schließen
     setIsMobileNavActive(false); // Auch mobiles Menü schließen
     setActiveSubmenu(null); // Auch mobiles Submenü schließen
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Sanft zum Seitenanfang scrollen
@@ -40,7 +53,7 @@ const Navbar = ({
         }}
       />
       <header>
-        <nav className="navbar">
+        <nav className="navbar" onMouseLeave={handleMouseLeave}>
           <div className="logo">
             {/* Link zur Startseite sollte auch den Blur-Effekt deaktivieren */}
             <Link to="/" onClick={handleNavigation}>
@@ -48,13 +61,10 @@ const Navbar = ({
             </Link>
           </div>
           {/* Desktop Navigation */}
-          <ul className="nav-links desktop-nav"
-            onMouseEnter={() => setBlurred(true)}
-            onMouseLeave={() => setBlurred(false)} // Dies sollte idealerweise reichen, aber wir fügen zusätzliche Sicherungen hinzu
-          >
-            <li>
+          <ul className="nav-links desktop-nav">
+            <li onMouseEnter={() => handleMouseEnter('gerichte')}>
               <a>Gerichte</a>
-              <ul className="dropdown">
+              <ul className={`dropdown ${openDropdown === 'gerichte' ? 'active' : ''}`}>
                 {/* Alle Links, die zu einer anderen Seite führen oder die Ansicht stark ändern, sollten handleNavigation aufrufen */}
                 <li><Link to="/speisekarte#bowls" onClick={handleNavigation}>Bowls</Link></li>
                 <li><Link to="/speisekarte#porridge" onClick={handleNavigation}>Porridge</Link></li>
@@ -64,9 +74,9 @@ const Navbar = ({
                 <li><Link to="/angebote#waffeln" onClick={handleNavigation}>Waffeln</Link></li>
               </ul>
             </li>
-            <li>
+            <li onMouseEnter={() => handleMouseEnter('angebote')}>
               <a href="#services">Angebote</a>
-              <ul className="dropdown">
+              <ul className={`dropdown ${openDropdown === 'angebote' ? 'active' : ''}`}>
                 {/* Anker-Links auf derselben Seite benötigen dies nicht unbedingt, aber es schadet nicht */}
                 <li><Link to="/angebote#waffeln" onClick={handleNavigation}>Neu im Angebot</Link></li>
                 <li><Link to="/angebote#smoothies" onClick={handleNavigation}>Aktionen</Link></li>
@@ -82,9 +92,9 @@ const Navbar = ({
               </ul>
             </li>
             */}
-            <li>
+            <li onMouseEnter={() => handleMouseEnter('kontakt')}>
               <a href="#contact">Kontakt</a>
-              <ul className="dropdown">
+              <ul className={`dropdown ${openDropdown === 'kontakt' ? 'active' : ''}`}>
                 <li><Link to="/kontakt#kontakt" onClick={handleNavigation}>Kontakt</Link></li>
                 <li><Link to="/kontakt#impressum" onClick={handleNavigation}>Imperessum</Link></li>
               </ul>

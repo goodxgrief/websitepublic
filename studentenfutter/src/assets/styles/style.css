@@ -180,13 +180,17 @@ p {
     display: block;
   }
 
+  /* ================================================== */
+  /* === START: Ersetzen Sie den folgenden Block vollständig === */
+  /* ================================================== */
+
   /* Styling für das Dropdown-Menü */
-.nav-links li {
+  .nav-links li {
     position: relative;
   }
   
   .dropdown {
-    display: none;
+    display: none; /* Standardmäßig unsichtbar */
     position: fixed;
     background: #f5f5f7;
     padding: 20px;
@@ -195,34 +199,28 @@ p {
     list-style: none;
     text-align: left;
     min-height: 200px;
-    opacity: 0;
-    transform: translateY(0); /* Startet leicht nach oben verschoben */
+    opacity: 0; /* Startet unsichtbar für die Animation */
     transform-origin: top;
-    animation: dropdownSlideIn 0.5s ease forwards;
     z-index: 10; /* Über dem Overlay */
   }
   
-  .nav-links li:hover .dropdown {
-    display: block;
-    transform: scaleY(1); /* Entfaltet sich nach unten */
-    opacity: 1;
+  /* NEUE LOGIK: Zeigt das Dropdown an, wenn es die .active-Klasse hat */
+  .dropdown.active {
+    display: block; /* Macht das Element sichtbar */
+    animation: dropdownFadeIn 0.4s ease forwards; /* Spielt die Einblend-Animation ab */
   }
   
+  /* Die alte Regel ".nav-links li:hover .dropdown" wurde durch die obige .active-Regel ersetzt. */
+
   .nav-links:hover ~ .blur-overlay {
     opacity: 1;
     pointer-events: auto; /* Ermöglicht Interaktion mit Overlay */
   }
   
   /* Animation für das Dropdown-Menü */
-  @keyframes dropdownSlideIn {
-    0% {
-      opacity: 0;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  @keyframes dropdownFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
   
   /* Links im Dropdown-Menü */
@@ -244,12 +242,12 @@ p {
   }
   
   /* Animation für die Links im Dropdown-Menü */
-  .dropdown li:nth-child(1) a { animation-delay: 0.3s; }
-  .dropdown li:nth-child(2) a { animation-delay: 0.4s; }
-  .dropdown li:nth-child(3) a { animation-delay: 0.5s; }
-  .dropdown li:nth-child(4) a { animation-delay: 0.6s; }
-  .dropdown li:nth-child(5) a { animation-delay: 0.7s; }
-  .dropdown li:nth-child(6) a { animation-delay: 0.8s; }
+  .dropdown.active li:nth-child(1) a { animation-delay: 0.2s; }
+  .dropdown.active li:nth-child(2) a { animation-delay: 0.3s; }
+  .dropdown.active li:nth-child(3) a { animation-delay: 0.4s; }
+  .dropdown.active li:nth-child(4) a { animation-delay: 0.5s; }
+  .dropdown.active li:nth-child(5) a { animation-delay: 0.6s; }
+  .dropdown.active li:nth-child(6) a { animation-delay: 0.7s; }
   
   /* Hover-Effekt für die Links */
   .dropdown li a:hover {
@@ -258,9 +256,15 @@ p {
   }
   
   @keyframes linkSlideIn {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
   }
+
+  /* =============================================== */
+  /* === ENDE des zu ersetzenden Blocks === */
+  /* =============================================== */
   
   .blur-overlay {
     position: fixed;
@@ -544,4 +548,17 @@ p {
       /* falls Du noch einen Mindestabstand haben willst: */
       /* min-height: 200px; */
     }
+  }
+
+  /* Bisherige Hover-Logik ersetzen oder entfernen */
+  /* Z.B. .nav-links .desktop-nav li:hover .dropdown { display: block; } ENTFERNEN */
+
+  /* Neue Logik mit .active Klasse */
+  .nav-links .desktop-nav li .dropdown {
+    display: none; /* Standardmäßig ausblenden */
+    /* Behalten Sie hier Ihre anderen Stile wie position, background-color etc. bei */
+  }
+
+  .nav-links .desktop-nav li .dropdown.active {
+    display: block; /* Nur anzeigen, wenn die .active-Klasse vorhanden ist */
   }
