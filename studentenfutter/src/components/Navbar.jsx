@@ -85,7 +85,7 @@ const Navbar = ({
             <li>
               <a href="#contact">Kontakt</a>
               <ul className="dropdown">
-                <li><Link to="/kontakt" onClick={handleNavigation}>Kontakt</Link></li>
+                <li><Link to="/kontakt#kontakt" onClick={handleNavigation}>Kontakt</Link></li>
                 <li><Link to="/kontakt#impressum" onClick={handleNavigation}>Imperessum</Link></li>
               </ul>
             </li>

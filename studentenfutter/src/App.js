@@ -8,6 +8,7 @@ import BowlsPage from './pages/BowlsPage';
 import AngebotePage from './pages/AngebotePage'; // Importieren
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop'; // <-- Importieren
 
 
 // CSS imports
@@ -321,7 +322,8 @@ const App = () => {
   }, []);
 
   return (
-    <Router> {/* Router umschließt die gesamte App */}
+    <Router>
+      <ScrollToTop /> {/* <-- Hier einfügen */}
       <div className="App"> {/* In React wird className statt class verwendet */}
         <Helmet>
           <title>Studentenfutter Gießen</title>

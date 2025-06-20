@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../assets/styles/KontaktPage.css';
@@ -6,8 +7,28 @@ import '../assets/styles/KontaktPage.css';
 const KontaktPage = ({
   blurred, setBlurred, isMobileNavActive, setIsMobileNavActive, activeSubmenu, setActiveSubmenu
 }) => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    setTimeout(() => {
+      // Wenn kein Hash vorhanden ist, zum Seitenanfang scrollen.
+      if (!hash) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Ansonsten zum Element mit der entsprechenden ID scrollen.
+        const id = hash.substring(1);
+        if (id) {
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+    }, 100);
+  }, [hash]);
+
   return (
-    <>
+    <div className={`kontakt-page ${blurred ? 'blurred' : ''}`}>
       <Navbar
         blurred={blurred}
         setBlurred={setBlurred}
@@ -97,7 +118,7 @@ const KontaktPage = ({
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
