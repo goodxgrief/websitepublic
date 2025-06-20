@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import offerImg from '../assets/media/offer.png';
@@ -7,6 +8,21 @@ import '../assets/styles/AngebotePage.css';
 const AngebotePage = ({
   blurred, setBlurred, isMobileNavActive, setIsMobileNavActive, activeSubmenu, setActiveSubmenu
 }) => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.substring(1);
+      // Eine kleine Verzögerung stellt sicher, dass das Element im DOM vorhanden ist, bevor gescrollt wird.
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [hash]);
+
   const offers = [
     {
       id: 'waffeln',

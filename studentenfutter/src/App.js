@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// useNavigate zum Import hinzufügen
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Carousel from './components/Carousel';
 import OrderSection from './components/OrderSection';
@@ -31,6 +32,7 @@ import offerImg from './assets/media/offer.png'
 import image1 from './assets/media/image1.jpg';
 import image2 from './assets/media/image2.jpg';
 import image3 from './assets/media/image3.jpg';
+import KontaktPage from './pages/KontaktPage';
 
 // Komponente für den Inhalt der Startseite (alles außer der BowlsPage)
 const HomePageContent = ({
@@ -38,6 +40,9 @@ const HomePageContent = ({
   cardData, handleTouchStart, handleTouchMove, handleTouchEnd, prevCard, nextCard,
   setBlurred, setIsMobileNavActive, setActiveSubmenu
 }) => {
+  // useNavigate-Hook für die Navigation verwenden
+  const navigate = useNavigate();
+
   useEffect(() => {
     // Instagram Embed neu laden
     if (window.instgrm) {
@@ -120,7 +125,8 @@ const HomePageContent = ({
               >
                 <div className="card-overlay"><p>{card.title}</p></div>
                 {/* Button im Carousel könnte auch zur /speisekarte linken */}
-                <button className="card-button" onClick={() => window.location.href = card.href.startsWith('#') ? card.href : '/speisekarte'}>
+                {/* Den onClick-Handler anpassen, um navigate zu verwenden */}
+                <button className="card-button" onClick={() => navigate(card.href)}>
                   Mehr erfahren
                 </button>
               </div>
@@ -251,9 +257,9 @@ const App = () => {
   // Wenn Klicks im Carousel auch zur /speisekarte führen sollen, passe sie an.
   // Ansonsten können sie auch auf Anker-IDs auf der Startseite zeigen, falls gewünscht.
   const cardData = [
-    { title: 'ausgewogene Snacks', img: snacks, href: '#speisekarte-snacks' }, // Beispiel für Anker
-    { title: 'Frische Bowls', img: bowl1, href: '/speisekarte' }, // Beispiel für Link zur Seite
-    { title: 'Hausgemachte Drinks', img: drinks, href: '#speisekarte-getraenke' } // Beispiel für Anker
+    { title: 'Frische Bowls', img: snacks, href: '/speisekarte#snacks' }, // Beispiel für Anker
+    { title: 'Hausgemachte Drinks', img: bowl1, href: '/speisekarte#bowls' }, // Beispiel für Link zur Seite
+    { title: 'Ausgewogene Snacks', img: drinks, href: '/speisekarte#getraenke' } // Beispiel für Anker
   ];
 
   const handleTouchStart = (e) => {
@@ -351,6 +357,17 @@ const App = () => {
           <Route path="/speisekarte" element={<BowlsPage />} /> {/* Route für deine BowlsPage */}
           <Route path="/angebote" element={
             <AngebotePage
+              blurred={blurred}
+              setBlurred={setBlurred}
+              isMobileNavActive={isMobileNavActive}
+              setIsMobileNavActive={setIsMobileNavActive}
+              activeSubmenu={activeSubmenu}
+              setActiveSubmenu={setActiveSubmenu}
+            />
+          } />
+
+            <Route path="/kontakt" element={
+            <KontaktPage
               blurred={blurred}
               setBlurred={setBlurred}
               isMobileNavActive={isMobileNavActive}

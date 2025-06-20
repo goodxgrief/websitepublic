@@ -1,5 +1,6 @@
 // filepath: src/pages/BowlsPage.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'; // Import für useLocation
 import Navbar from '../components/Navbar';
 import '../assets/styles/BowlsPage.css';
 import Footer from '../components/Footer';
@@ -9,6 +10,22 @@ const BowlsPage = () => {
   const [blurred, setBlurred] = useState(false);
   const [isMobileNavActive, setIsMobileNavActive] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+
+  // Hook, um auf die URL zuzugreifen (insbesondere den #hash-Teil)
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    // Prüfen, ob ein Hash in der URL vorhanden ist (z.B. #bowls)
+    if (hash) {
+      // Das '#' entfernen, um die reine ID zu erhalten
+      const id = hash.substring(1); 
+      const element = document.getElementById(id);
+      if (element) {
+        // Sanft zum gefundenen Element scrollen
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [hash]); // Dieser Code wird jedes Mal ausgeführt, wenn sich der Hash in der URL ändert
 
   return (
     <>

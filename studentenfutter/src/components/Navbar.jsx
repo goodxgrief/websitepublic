@@ -15,6 +15,7 @@ const Navbar = ({
     setBlurred(false); // Blur-Effekt deaktivieren bei jeder Navigation
     setIsMobileNavActive(false); // Auch mobiles Menü schließen
     setActiveSubmenu(null); // Auch mobiles Submenü schließen
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Sanft zum Seitenanfang scrollen
   };
 
   const handleMobileLinkClick = () => {
@@ -52,22 +53,23 @@ const Navbar = ({
             onMouseLeave={() => setBlurred(false)} // Dies sollte idealerweise reichen, aber wir fügen zusätzliche Sicherungen hinzu
           >
             <li>
-              <a href="#products">Gerichte</a>
+              <a>Gerichte</a>
               <ul className="dropdown">
                 {/* Alle Links, die zu einer anderen Seite führen oder die Ansicht stark ändern, sollten handleNavigation aufrufen */}
-                <li><Link to="/speisekarte" onClick={handleNavigation}>Bowls</Link></li>
-                <li><Link to="/speisekarte" onClick={handleNavigation}>Snacks</Link></li>
-                <li><Link to="/speisekarte" onClick={handleNavigation}>Getränke</Link></li>
-                <li><Link to="/speisekarte" onClick={handleNavigation}>Speisekarte</Link></li>
+                <li><Link to="/speisekarte#bowls" onClick={handleNavigation}>Bowls</Link></li>
+                <li><Link to="/speisekarte#porridge" onClick={handleNavigation}>Porridge</Link></li>
+                <li><Link to="/speisekarte#warme-gerichte" onClick={handleNavigation}>Warme Gerichte</Link></li>
+                <li><Link to="/speisekarte#snacks" onClick={handleNavigation}>Snacks</Link></li>
+                <li><Link to="/speisekarte#getraenke" onClick={handleNavigation}>Getränke</Link></li>
+                <li><Link to="/angebote#waffeln" onClick={handleNavigation}>Waffeln</Link></li>
               </ul>
             </li>
             <li>
               <a href="#services">Angebote</a>
               <ul className="dropdown">
                 {/* Anker-Links auf derselben Seite benötigen dies nicht unbedingt, aber es schadet nicht */}
-                <li><Link to="/angebote" onClick={handleNavigation}>Angebote</Link></li>
-                <li><a href="#phone-repair" onClick={() => setBlurred(false)}>Saisonales</a></li>
-                <li><a href="#consulting" onClick={() => setBlurred(false)}>Angebote</a></li>
+                <li><Link to="/angebote#waffeln" onClick={handleNavigation}>Neu im Angebot</Link></li>
+                <li><Link to="/angebote#smoothies" onClick={handleNavigation}>Aktionen</Link></li>
               </ul>
             </li>
             {/*}
@@ -83,9 +85,8 @@ const Navbar = ({
             <li>
               <a href="#contact">Kontakt</a>
               <ul className="dropdown">
-                <li><a href="#location" onClick={() => setBlurred(false)}>Standort</a></li>
-                <li><a href="#contact-form" onClick={() => setBlurred(false)}>Kontaktformular</a></li>
-                <li><a href="#support" onClick={() => setBlurred(false)}>Support</a></li>
+                <li><Link to="/kontakt" onClick={handleNavigation}>Kontakt</Link></li>
+                <li><Link to="/kontakt#impressum" onClick={handleNavigation}>Imperessum</Link></li>
               </ul>
             </li>
           </ul>
@@ -120,10 +121,12 @@ const Navbar = ({
                 <span>Gerichte</span>
               </div>
               <ul>
-                <li><Link to="/speisekarte" onClick={handleMobileLinkClick}>Bowls</Link></li>
-                <li><Link to="/speisekarte" onClick={handleMobileLinkClick}>Snacks</Link></li>
-                <li><Link to="/speisekarte" onClick={handleMobileLinkClick}>Getränke</Link></li>
-                <li><Link to="/speisekarte" onClick={handleMobileLinkClick}>Speisekarte</Link></li>
+                <li><Link to="/speisekarte#bowls" onClick={handleMobileLinkClick}>Bowls</Link></li>
+                <li><Link to="/speisekarte#porridge" onClick={handleMobileLinkClick}>Porridge</Link></li>
+                <li><Link to="/speisekarte#warme-gerichte" onClick={handleMobileLinkClick}>Warme Gerichte</Link></li>
+                <li><Link to="/speisekarte#snacks" onClick={handleMobileLinkClick}>Snacks</Link></li>
+                <li><Link to="/speisekarte#getraenke" onClick={handleMobileLinkClick}>Getränke</Link></li>
+                <li><Link to="/angebote#waffeln" onClick={handleMobileLinkClick}>Waffeln</Link></li>
               </ul>
             </div>
             <div className={`mobile-submenu ${activeSubmenu === 'angebote' ? 'active' : ''}`} id="angebote">
