@@ -120,7 +120,7 @@ const Navbar = ({
             <ul className="mobile-nav-links">
               <li><a onClick={() => handleMobileSubmenuLinkClick('gerichte')}>Gerichte</a></li>
               <li><a onClick={() => handleMobileSubmenuLinkClick('angebote')}>Angebote</a></li>
-              <li><a onClick={() => handleMobileSubmenuLinkClick('about')}>Über uns</a></li>
+              {/*<li><a onClick={() => handleMobileSubmenuLinkClick('about')}>Über uns</a></li>*/}
               <li><a onClick={() => handleMobileSubmenuLinkClick('kontakt')}>Kontakt</a></li>
             </ul>
 
@@ -145,9 +145,9 @@ const Navbar = ({
                 <span>Angebote</span>
               </div>
               <ul>
-                <li><a href="#pc-repair" onClick={handleMobileLinkClick}>Tagesgerichte</a></li>
-                <li><a href="#phone-repair" onClick={handleMobileLinkClick}>Saisonales</a></li>
-                <li><a href="#consulting" onClick={handleMobileLinkClick}>Angebote</a></li>
+                <li><Link to="/angebote#waffeln" onClick={handleNavigation}>Neu im Angebot</Link></li>
+                <li><Link to="/angebote#smoothies" onClick={handleNavigation}>Aktionen</Link></li>
+                {/*<li><a href="#consulting" onClick={handleMobileLinkClick}>Angebote</a></li>*/}
               </ul>
             </div>
             <div className={`mobile-submenu ${activeSubmenu === 'about' ? 'active' : ''}`} id="about">
@@ -167,9 +167,8 @@ const Navbar = ({
                 <span>Kontakt</span>
               </div>
               <ul>
-                <li><a href="#location" onClick={handleMobileLinkClick}>Standort</a></li>
-                <li><a href="#contact-form" onClick={handleMobileLinkClick}>Kontaktformular</a></li>
-                <li><a href="#support" onClick={handleMobileLinkClick}>Support</a></li>
+                <li><Link to="/kontakt#kontakt" onClick={handleNavigation}>Kontakt</Link></li>
+                <li><Link to="/kontakt#impressum" onClick={handleNavigation}>Imperessum</Link></li>
               </ul>
             </div>
           </div>
